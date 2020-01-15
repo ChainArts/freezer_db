@@ -68,7 +68,7 @@ body {
     position: absolute;
     height: fit-content;
     width: fit-content;
-    min-width: 250px;
+    min-width: 200px;
     background-color: #36393f;
     padding: 20px;
     border-radius: 10px;
@@ -118,8 +118,14 @@ body {
     text-align: left;
 }
 
+.error{
+    position: absolute;
+    right: 0;
+    color: tomato;
+}
+
 .input{
-    margin: 10px 0px 10px 0px;
+    margin: 10px 0px 15px 0px;
     position: relative;
 }
 
