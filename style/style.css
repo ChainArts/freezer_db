@@ -56,8 +56,6 @@ body {
     width: min-content !important;
     position: absolute;
     display: block;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, calc(-50% + 25px));
     background-color: #2C2F33;
     border-radius: 50px;
@@ -68,9 +66,6 @@ body {
 .wrapper{
     display: block;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     height: fit-content;
     width: fit-content;
     min-width: 250px;
