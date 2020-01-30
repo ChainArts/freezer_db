@@ -31,7 +31,7 @@ include "config.php";
     $nameErr = $passErr = "";
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(empty($_POST['username'])){
-            $nameErr = "Enter a Username";
+            $nameErr = "Enter a username";
             if(empty($_POST['pass'])){
                 $passErr = "Enter a Password";
             }
@@ -39,7 +39,7 @@ include "config.php";
         elseif(empty($_POST['pass'])){
             $passErr = "Enter a password";
             if(empty($_POST['username'])){
-                $nameErr = "Enter a Username";
+                $nameErr = "Enter a username";
             }
         }
         else{

@@ -4,7 +4,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 $username = mysqli_real_escape_string($link, $_POST['username']);
 $result = mysqli_query($link, "SELECT * FROM userdata WHERE username='$username'");
 if($result->num_rows == 0){
-    $nameErr = "Incorrect Username or Password";
+    $nameErr = "Incorrect username or password";
 }
 else{
     $user = mysqli_fetch_assoc($result);
@@ -16,7 +16,7 @@ else{
         $_SESSION["USR_SNAME"] = $user['lastname'];
     }
     else{
-        $nameErr = "Incorrect Username or password";
+        $nameErr = "Incorrect username or password (bcrypt)";
     }
 }
 }
