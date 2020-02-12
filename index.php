@@ -33,7 +33,7 @@ include "config.php";
         if(empty($_POST['username'])){
             $nameErr = "Enter a username";
             if(empty($_POST['pass'])){
-                $passErr = "Enter a Password";
+                $passErr = "Enter a password";
             }
         }
         elseif(empty($_POST['pass'])){
@@ -61,7 +61,10 @@ include "config.php";
                     <span>Password<span class="error"><?php echo $passErr ?></span></span>
                     <input type="password" name="pass" class="form">
                 </div>
+                <a href="javascript:delay('change_pw.php')" class="link">Forgot password?</a>
                 <input type="submit" name="login" value="LOGIN" class="btn">
+                 <a href="javascript:delay('register.php')" class="link">Register now</a>
+                
             </form>
         </div>
     </div>

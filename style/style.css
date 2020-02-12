@@ -148,6 +148,12 @@ body {
     background: #e6ffff;
 }
 
+.link {
+    cursor: pointer;
+    color: #e6ffff;
+}
+
+
 .fade{
     animation: fadeOut .4s ease-out forwards;
 }
