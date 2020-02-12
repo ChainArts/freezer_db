@@ -14,6 +14,9 @@ else{
         $_SESSION["USR_PASS"] = $user['password'];
         $_SESSION["USR_VNAME"] = $user['firstname'];
         $_SESSION["USR_SNAME"] = $user['lastname'];
+        
+        header('location: landing.php');
+        $_SESSION["LOC"] = "landing.php";
     }
     else{
         $nameErr = "Incorrect username or password (bcrypt)";

@@ -91,13 +91,4 @@ include "config.php";
                 </form>
             </div>
         </div>
-    </div>
-    <script src="js/transition.js"></script>
-    <script> function delay(URL) {
-        $(".loginwindow").removeClass("fade");
-        $(".loginwindow").addClass("fade");
-        setTimeout(function () {
-            window.location = URL;
-        }, 400)
-    };</script>
 </body>

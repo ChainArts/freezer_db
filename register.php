@@ -85,36 +85,28 @@
                     <div class="namewrapper">
                     <div class="usr input">
                         <span class="label">Firstname</span>
-                        <input type="text" name="firstname" class="form" value="<?php if(isset($_POST['firstname'])) echo $_POST['firstname']; ?>"></input>
+                        <input type="text" name="firstname" class="form" value="<?php if(isset($_POST['firstname'])) echo $_POST['firstname']; ?>">
                     </div>
                     <div class="usr input">
                         <span class="label">Lastname</span>
-                        <input type="text" name="lastname" class="form" value="<?php if(isset($_POST['lastname'])) echo $_POST['sname']; ?>"></input>
+                        <input type="text" name="lastname" class="form" value="<?php if(isset($_POST['lastname'])) echo $_POST['sname']; ?>">
                     </div>
                     </div>
                     <div class="usr input">
                         <span class="label">Username<span class="error"><?php echo $nameErr ?></span></span>
-                        <input type="text" name="username" class="form" value="<?php if(isset($_POST['username'])) echo $_POST['username']; ?>"></input>
+                        <input type="text" name="username" class="form" value="<?php if(isset($_POST['username'])) echo $_POST['username']; ?>">
                     </div>
                     <div class="pwd input">
                         <span>Password<span class="error"><?php echo $passErr ?></span></span>
-                        <input type="password" name="pass" class="form"></input>
+                        <input type="password" name="pass" class="form">
                     </div>
                     <div class="pwd input">
                         <span>Confirm password</span>
-                        <input type="password" name="passconfirm" class="form"></input>
+                        <input type="password" name="passconfirm" class="form">
                     </div>
-                    <input type="submit" name="register" value="REGISTER" class="btn"></input>
+                    <input type="submit" name="register" value="REGISTER" class="btn">
                     <a href="javascript:delay('index.php')" class="link">Login</a>
                 </form>
             </div>
         </div>
-    <script src="js/transition.js"></script>
-    <script> function delay(URL) {
-        $(".loginwindow").removeClass("fade");
-        $(".loginwindow").addClass("fade");
-        setTimeout(function () {
-            window.location = URL;
-        }, 400)
-    };</script>
 </body>

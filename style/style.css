@@ -10,6 +10,8 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+  
+
 ::-webkit-scrollbar{
     display: none;
 }
@@ -155,19 +157,18 @@ body {
 
 
 .fade{
-    animation: fadeOut .4s ease-out forwards;
+    animation: fadeOut .25s ease-out forwards;
 }
 
 @keyframes fadeIn{
     0%{
         opacity: 0;
         visibility: hidden;
-        transform: translate(-50%, calc(-50% + 25px));
+        transform: translate(0%, calc(0% + 25px));
     }
     100%{
         opacity: 1;
         visibility: visible;
-        transform: translate(-50%, calc(-50%));
     }
 }
 
@@ -175,11 +176,10 @@ body {
     0%{
         opacity: 1;
         visibility: visible;
-        transform: translate(-50%, calc(-50%));
     }
     100%{
         opacity: 0;
         visibility: hidden;
-        transform: translate(-50%, calc(-50% - 25px));
+        transform: translate(0% , calc(0% - 25px));
     }
 }
