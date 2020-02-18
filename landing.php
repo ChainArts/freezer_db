@@ -7,7 +7,7 @@ include "config.php";
 <html>
 
 <head>
-    <title> Freezer Management | Login </title>
+    <title> Freezer Management | Dashboard </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 

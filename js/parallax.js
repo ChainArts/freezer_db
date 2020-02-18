@@ -1,6 +1,6 @@
 function delay(URL) {
-    $("#container").removeClass("fade");
-    $("#container").addClass("fade");
+    $("body").removeClass("fade");
+    $("body").addClass("fade");
     setTimeout(function () {
         window.location = URL;
     }, 400)

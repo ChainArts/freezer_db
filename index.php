@@ -63,7 +63,7 @@ include "config.php";
                 </div>
                 <a href="javascript:delay('change_pw.php')" class="link">Forgot password?</a>
                 <input type="submit" name="login" value="LOGIN" class="btn">
-                 <a href="javascript:delay('register.php')" class="link">Register now</a>
+                <a href="javascript:delay('register.php')" class="link">Register now</a>
                 
             </form>
         </div>
