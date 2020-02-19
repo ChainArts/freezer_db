@@ -26,9 +26,6 @@ TweenLite.ticker.addEventListener('tick', function(){
   if (mouse.moved){    
     parallaxIt(".wrapper", -30);
     parallaxIt(".login", -10);
-    parallaxIt(".content-wrapper", -50)
-    parallaxIt(".menu", -5)
-    parallaxIt(".menulist", -10)
   }
   // set moved property to false on each frame so parallax function won't be called more than once
   mouse.moved = false;
