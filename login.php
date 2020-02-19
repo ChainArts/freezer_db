@@ -84,7 +84,7 @@ include "config.php";
                     <span>Password<span class="error"><?php echo $passErr ?></span></span>
                     <input type="password" name="pass" class="form">
                 </div>
-                <a href="javascript:delay('change_pw')" class="link">Forgot password?</a>
+                <a href="javascript:delay('reset')" class="link">Forgot password?</a>
                 <input type="submit" name="login" value="LOGIN" class="btn">
                 <a href="javascript:delay('register')" class="link">Register now</a>
                 

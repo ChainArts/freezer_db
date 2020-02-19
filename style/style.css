@@ -47,7 +47,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeIn .4s ease-out forwards;
+    animation: fadeIn .25s ease-out forwards;
 }
 
 .login {
@@ -140,6 +140,55 @@ body {
     background: #e6ffff;
 }
 
+.menu {
+    left: 0;
+    position: fixed;
+    width: 10vw;
+    background-color: #36393f;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 15px rgba(	66, 68, 67, 0.25);
+}
+
+.menulist{
+    text-align: left;
+    position: relative;
+    width: 100%;
+}
+
+.menulist .usr_info{
+    position: absolute;
+    bottom: 1vh;
+    width: inherit;
+    color: #6FFFF;
+    font-weight: 100;
+}
+
+i{
+    padding: 5px;
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+    background: #e6ffff;
+background: -webkit-#e6ffff;
+background: -o- #e6ffff;);
+background: #e6ffff;/* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+    margin: 4px;
+    border-radius: 7.5px;
+}
+
+li a {
+    color: #6279CA;
+    padding: 10px;
+    height: 100%;
+    display: block;
+    font-size: 16px;
+}
+
+
 .link {
     cursor: pointer;
     color: #e6ffff;
@@ -147,7 +196,7 @@ body {
 
 
 .fade{
-    animation: fadeOut .4s ease-out forwards;
+    animation: fadeOut .25s ease-out forwards;
 }
 
 @keyframes fadeIn{

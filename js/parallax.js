@@ -3,7 +3,7 @@ function delay(URL) {
     $("body").addClass("fade");
     setTimeout(function () {
         window.location = URL;
-    }, 400)
+    }, 250)
 };
 
 $(document).ready(function () {
