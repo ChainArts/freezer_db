@@ -61,14 +61,14 @@
 
                     if(mysqli_query($link, $query)){
                         echo "<a> registration complete </a>";
-                        echo "<a href='index.php'>Login</a>";
-                        echo '<meta http-equiv="refresh" content="1;URL=index.php"/>';
+                        echo "<a href='login'>Login</a>";
+                        echo '<meta http-equiv="refresh" content="1;URL=login"/>';
                         die;
                         }
                     else{
                         echo "<a> Registration failed.</a>";
-                        echo "<a href='register_index.php'>Try again</a>";
-                        echo '<meta http-equiv="refresh" content="1;URL=register.php"/>';
+                        echo "<a href='register'>Try again</a>";
+                        echo '<meta http-equiv="refresh" content="1;URL=register"/>';
                         die;
                         }
                     }   
@@ -105,7 +105,7 @@
                         <input type="password" name="passconfirm" class="form">
                     </div>
                     <input type="submit" name="register" value="REGISTER" class="btn">
-                    <a href="javascript:delay('index.php')" class="link">Login</a>
+                    <a href="javascript:delay('login')" class="link">Login</a>
                 </form>
             </div>
         </div>

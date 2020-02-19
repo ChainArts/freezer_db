@@ -53,15 +53,15 @@ include "config.php";
             
             if(mysqli_query($link, $query)){
                 echo "Password Updated <br>";
-                echo "<a href='index.php'>Login</a>";
-                echo '<meta http-equiv="refresh" content="1;URL=index.php"/>';
+                echo "<a href='login'>Login</a>";
+                echo '<meta http-equiv="refresh" content="1;URL=login"/>';
                 die;
             }
             else
             {
                 echo "Nix gud";
-                echo "<a href='change_pw.php'>Try again</a>";
-                echo '<meta http-equiv="refresh" content="1;URL=change_pw.php"/>';
+                echo "<a href='change_pw'>Try again</a>";
+                echo '<meta http-equiv="refresh" content="1;URL=change_pw"/>';
                 die;
             }
             }
@@ -87,7 +87,7 @@ include "config.php";
                         <input type="password" name="newpassconf" class="form" value="<?php if(isset($_POST['newpassconf'])) echo $_POST['newpassconf']; ?>">
                     </div>
                     <input type="submit" name="reset" value="RESET" class="btn">
-                    <a href="javascript:delay('index.php')" class="link">Back</a>
+                    <a href="javascript:delay('login')" class="link">Back</a>
                 </form>
             </div>
         </div>
