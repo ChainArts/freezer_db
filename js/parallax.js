@@ -6,6 +6,21 @@ function delay(URL) {
     }, 250)
 };
 
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("sidenav-main").style.width = "250px";
+  document.getElementById("content").style.marginLeft= "250px";
+  document.getElementById("header").style.marginLeft = "250px";
+  $('head').append('<style>.page-wrapper:before{opacity: 1; visibility:visible;;}</style>');
+}
+
+function closeNav() {
+  document.getElementById("sidenav-main").style.width = "0";
+  document.getElementById("content").style.marginLeft= "0";
+  document.getElementById("header").style.marginLeft = "0px";
+  $('head').append('<style>.page-wrapper:before{opacity: 0; visibility:hidden;;}</style>');
+}
+
 $(document).ready(function () {
     // Retrieve container position relative to viewport
 var rect = $('#container')[0].getBoundingClientRect();

@@ -12,7 +12,8 @@
 
     <!--Stylesheets-->
     <link rel="stylesheet" type="text/css" href="style/style.css" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/fac922bca7.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,300|Source+Sans+Pro:200,300,400&display=swap" rel="stylesheet">
     
     <!--JavaScript-->
@@ -24,27 +25,53 @@
 </head>
 
 <body>
-    <div id="container">
-        <nav class="menu">
-            <div class="menulist">
-                 <ul>
-                    <li><a href="#Freezer"><i class="fas fa-clipboard-list"></i> Freezer </a> </li>
-                    <li><a href="#contents"><i class="fas fa-fish"></i> Contents </a> </li>
-                    <li><a href="insert_item"><i class="fas fa-pencil-alt"></i> Add Item </a></li>
-                </ul>
-                <div class="usr_info">
-                    <ul>    
-                        <li>
-                            <a>
-                                <h1>Currently logged in as:</h1>
-                                <p><?php echo $_SESSION["USR_VNAME"] . " " . $_SESSION["USR_SNAME"];?></p>
-                            </a>
-                        </li>
-                        <li><a href="login" onClick="session_unset(); session_destroy()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-                        <?php// print_r($_SESSION); ?>
-                    </ul>
+    <div class="page-wrapper" id="page-wrapper">
+      <nav class="sidenav-main" id="sidenav-main">
+          <div class="header">
+             <div class="pull-left">
+                 
+             </div>
+             <div class="pull-right">
+                <div class="closebtn" onclick = "closeNav()">
+                    CLOSE &#10006
                 </div>
-            </div>
-        </nav>
+             </div>
+              
+          </div>
+          <ul class="menu-main">
+               <li>
+                   <a class="item" href="landing">Home</a>
+               </li>
+                <li>
+                    <a class="item" href="Freezer"><i class="fas fa-clipboard-list"></i> Freezer</a>
+                </li>
+                <li>
+                    <a class="item" href="contents"><i class="fas fa-fish"></i> Contents</a>
+                </li>
+                <li>
+                    <a href="insert_item" class="item"><i class="fas fa-pencil-alt"></i> Add Item</a>
+                </li>
+                <li>    
+                    <span class="item">
+                        <h1>Currently logged in as:</h1>
+                        <p style="font-weight: 200;"><?php echo $_SESSION["USR_VNAME"] . " " .    $_SESSION["USR_SNAME"];?></p>
+                    </span>
+                </li>
+                    <a class="item" href="login" onClick="session_unset(); session_destroy()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <li>
+                     <a class="item">About</a>
+                </li>
+          </ul>
+        </nav> 
+        <div id="content-wrapper">
+            <header id="header">
+                <div class="header-main">
+                   <div class="btn_menu" onclick="openNav()">&#9776;  MENU</div>
+                </div>
+            </header>
+            <section id=content>
+                Content
+            </section>
+        </div>
     </div>
 </body>

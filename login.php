@@ -13,7 +13,7 @@ include "config.php";
 
     <!--Stylesheets-->
     <link rel="stylesheet" type="text/css" href="style/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,300|Source+Sans+Pro:200,300,400&display=swap" rel="stylesheet">
     
     <!--JavaScript-->
@@ -60,10 +60,10 @@ include "config.php";
         
                     header('location: landing');
                     $_SESSION["LOC"] = "landing";
-            }
-            else{
-                $nameErr = "Incorrect username or password";
-            }
+                }
+                else{
+                    $nameErr = "Incorrect username or password";
+                    }
                 }
             }   
             mysqli_free_result($result);
