@@ -70,17 +70,6 @@ body {
   animation: fadeIn .25s ease-out forwards;
 }
 
-.btn_menu{
-  min-width: 115px;
-  height: 70px;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.5s ease-in-out;
-  text-align: center;
-  border-right: 1px solid #535353;
-  border-right: #535353;
-}
-
 .pull.left{
     float: left;
 }
@@ -145,8 +134,12 @@ body {
   padding-right: 30px;
   overflow: hidden;
   z-index: 1;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   float: right;
+}
+
+.sidenav-main .closebtn:hover{
+    color: #818181;
 }
 
 
@@ -181,6 +174,27 @@ ul {
     position: relative;
     display: flex;
     height: 70px;
+    border-bottom: 1px solid #434343;
+}
+
+.btn_menu{
+  min-width: 115px;
+  height: 70px;
+  border-right: 1px solid #434343;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+.btn_menu:hover{
+    color: #818181;
+}
+
+.box-right{
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
 }
 
 #content-wrapper {

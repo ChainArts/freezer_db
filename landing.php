@@ -28,9 +28,6 @@
     <div class="page-wrapper" id="page-wrapper">
       <nav class="sidenav-main" id="sidenav-main">
           <div class="header">
-             <div class="pull-left">
-                 
-             </div>
              <div class="pull-right">
                 <div class="closebtn" onclick = "closeNav()">
                     CLOSE &#10006
@@ -66,7 +63,12 @@
         <div id="content-wrapper">
             <header id="header">
                 <div class="header-main">
-                   <div class="btn_menu" onclick="openNav()">&#9776;  MENU</div>
+                  <div class="box-left">
+                       <div class="btn_menu" onclick="openNav()">&#9776;  MENU</div>
+                  </div>
+                  <div class="box-right">
+                      
+                  </div>
                 </div>
             </header>
             <section id=content>
