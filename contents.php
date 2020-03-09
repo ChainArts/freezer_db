@@ -6,7 +6,7 @@
 <html>
 
 <head>
-    <title> Freezer Management | Dashboard </title>
+    <title> Freezer Management | Contents </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -42,7 +42,7 @@
                     <a class="item" href="Freezer"><i class="fas fa-clipboard-list"></i> Freezer</a>
                 </li>
                 <li>
-                    <a class="item" href="contents"><i class="fas fa-fish"></i> Contents</a>
+                    <a class="item" href="contents" style= "background-color: #26292f;"><i class="fas fa-fish"></i> Contents</a>
                 </li>
                 <li>
                     <a href="insert_item" class="item"><i class="fas fa-pencil-alt"></i> Add Item</a>
@@ -58,7 +58,7 @@
                      <a class="item">About</a>
                 </li>
           </ul>
-        </nav>
+        </nav> 
         <div id="content-wrapper">
             <header id="header">
                 <div class="header-main">
@@ -66,26 +66,12 @@
                        <div class="btn_menu" onclick="openNav()">&#9776;  MENU</div>
                   </div>
                   <div class="box-right">
-                      DASHBOARD
+                     CONTENTS
                   </div>
                 </div>
             </header>
-            <div id="content">
-                <main class="tiles">
-                   <div class="box-1 gridbox"><div class="tilecontent">Freezer 1</div></div>
-                   <div class="box-2 gridbox"><div class="tilecontent">Freezer 2</div></div>
-                   <div class="box-3 gridbox"><div class="tilecontent">Freezer 3</div></div>
-                   <div class="box-4 gridbox"><div class="tilecontent">Freezer 4</div></div>
-                   <div class="box-5 gridbox"><div class="tilecontent">Freezer 5</div></div>
-                   <div class="box-6 gridbox"><div class="tilecontent">Freezer 6</div></div>
-                   <div class="box-7 gridbox"><div class="tilecontent">Freezer 7</div></div>
-                   <div class="box-8 gridbox"><div class="tilecontent">Freezer 8</div></div>
-                   <div class="box-9 gridbox"><div class="tilecontent">Freezer 9</div></div>
-                   <div class="box-10 gridbox"><div class="tilecontent">Freezer 10</div></div>
-                   <div class="box-11 gridbox"><div class="tilecontent">Freezer 11</div></div>
-                   <div class="box-12 gridbox"><div class="tilecontent">Freezer 12</div></div>
-                </main>    
-            </div>
+            <div id=content>
+                List
             <footer>
                 
             </footer>

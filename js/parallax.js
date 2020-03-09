@@ -8,18 +8,25 @@ function delay(URL) {
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
-  document.getElementById("sidenav-main").style.width = "250px";
-  document.getElementById("content").style.marginLeft= "250px";
-  document.getElementById("header").style.marginLeft = "250px";
-  $('head').append('<style>.page-wrapper:before{opacity: 1; visibility:visible;;}</style>');
+  document.getElementById("sidenav-main").style.transform = "translateX(0px)";
+  document.getElementById("content-wrapper").style.transform = "translateX(+250px)";
+  $('head').append('<style>#content-wrapper::before{opacity: 1; visibility:visible;;}</style>');
+   setTimeout(function(){
+    $('#content-wrapper').attr('onclick', 'closeNav()');
+}, 600);
 }
 
 function closeNav() {
-  document.getElementById("sidenav-main").style.width = "0";
-  document.getElementById("content").style.marginLeft= "0";
-  document.getElementById("header").style.marginLeft = "0px";
-  $('head').append('<style>.page-wrapper:before{opacity: 0; visibility:hidden;;}</style>');
+  document.getElementById("sidenav-main").style.transform = "translateX(-250px)";
+  document.getElementById("content-wrapper").style.transform = "translateX(0px)";
+  $('head').append('<style>#content-wrapper::before{opacity: 0; visibility:hidden;;}</style>');
+  $('#content-wrapper').attr('onclick', '');
 }
+
+window.addEventListener('load', function () {
+    $(".gridbox").addClass("animateGrid");
+    setTimeout(500);
+});
 
 $(document).ready(function () {
     // Retrieve container position relative to viewport

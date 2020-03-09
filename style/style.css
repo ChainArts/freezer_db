@@ -61,7 +61,6 @@ body {
   position: relative;
   width: 100%;
   min-height: 100%;
-  padding-top: 70px;
   background: #2a2d32;
   background-color: #2a2d32;
   z-index: 2;
@@ -85,7 +84,7 @@ body {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 0px;
+  width: 250px;
   height: 100vh;
   background: #36393f;
   background-color: #36393f;
@@ -94,6 +93,7 @@ body {
   transition: all 0.5s ease-in-out;
   white-space: nowrap;
   overflow-x: hidden;
+  transform: translateX(-250px);
   
 }
 
@@ -132,7 +132,7 @@ body {
 .sidenav-main .closebtn {
   cursor: pointer;
   padding-right: 30px;
-  overflow: hidden;
+  overflow-x: hidden;
   z-index: 1;
   transition: all 0.3s ease-in-out;
   float: right;
@@ -166,7 +166,7 @@ ul {
     font-size: 13px;
     font-weight: 400;
     background-color: #36393f;
-    z-index: 0;
+    z-index: 2;
     transition: margin-left .5s ease-in-out;
 }
 
@@ -193,18 +193,32 @@ ul {
 
 .box-right{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    margin-right: 116px;
     flex: 1;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    color: #FFF;    
+    font-weight: 200;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;    
+    
+    
 }
 
 #content-wrapper {
     display:flex;
     transition: all .5s ease-in-out;
-    padding: 20px;
-    z-index: 2;
+    z-index: 300;
+    overflow-y: auto;
+    transform: translateX(0px);
+    visibility: visible;
 }
 
-.page-wrapper::before {
+#content-wrapper::before {
     content: '';
     display: block;
     position: absolute;
@@ -214,11 +228,12 @@ ul {
     height: 100%;
     background-color:
     rgba(0,0,0,0.5);
-    z-index: 301;
+    z-index: 300;
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease-in-out;
 }
+
 .navbar-open.page-wrapper::before{
     opacity: 1;
     visibility: visible;
@@ -234,7 +249,86 @@ ul {
     transition: padding 0.6s ease-in-out;
     transition: -webkit-all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
+    padding-top: 70px;
 }
+
+.tiles {
+    width: 68vw;
+    height: 85vh;
+    padding: 5vh 7.5vw 5vh 7.5vw;
+    display: grid;
+    grid-template-columns: 30% 30% 30% 30%;
+    grid-template-rows: 30% 30% 30% 30%;
+    grid-gap: 1rem;
+    grid-template-areas: 
+        "box1 box2 box3 box4"
+        "box5 box6 box7 box8"
+        "box9 box10 box11 box12";
+}
+
+.tiles .gridbox{
+    background-image: url("https://picsum.photos/1280/720/?random");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    min-height: 100%;
+    min-width: 100%;    
+    margin: 0 auto;
+    box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 200ms ease-in-out;
+    border-radius: 5px;
+}
+
+.animateGrid{
+    animation: tilein .5s ease-in-out;
+}
+
+.tiles .gridbox:hover{
+    
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 1.5rem 2.8rem rgba(0,0,0,0.15), 0 1rem 1rem rgba(0,0,0,0.15);
+    transform: translate(0, -0.1rem)scale(1.01);
+    cursor: pointer;
+}
+
+.tiles .gridbox .tilecontent{
+    position: relative;
+    display: block;
+    z-index: 3;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    filter: none;
+    opacity: 0%;
+    transition: all 200ms ease-in-out;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.tiles .gridbox:hover .tilecontent{
+    background-color: rgba(0,0,0,0.75);
+    opacity: 100%;
+}
+
+.tiles .box-1 {grid-area: box1; animation-delay: 50ms ;}
+.tiles .box-2 {grid-area: box2; animation-delay: 50ms ;}
+.tiles .box-3 {grid-area: box3; animation-delay: 150ms;}
+.tiles .box-4 {grid-area: box4; animation-delay: 300ms;}
+.tiles .box-5 {grid-area: box5; animation-delay: 150ms;}
+.tiles .box-6 {grid-area: box6; animation-delay: 200ms;}
+.tiles .box-7 {grid-area: box7; animation-delay: 250ms;}
+.tiles .box-8 {grid-area: box8; animation-delay: 250ms;}
+.tiles .box-9 {grid-area: box9; animation-delay: 250ms;}
+.tiles .box-10 {grid-area: box10; animation-delay: 250ms;}
+.tiles .box-11 {grid-area: box11; animation-delay: 250ms;}
+.tiles .box-12 {grid-area: box12; animation-delay: 250ms;}
+.tiles .box-13 {grid-area: box13; animation-delay: 250ms;}
+.tiles .box-14 {grid-area: box14; animation-delay: 250ms;}
+.tiles .box-15 {grid-area: box15; animation-delay: 250ms;}
+.tiles .box-16 {grid-area: box16; animation-delay: 250ms;}
+
 
 .login {
     text-align: center;
@@ -359,4 +453,10 @@ ul {
         visibility: hidden;
         transform: translate(0%, calc(0% - 25px));
     }
+}
+
+@keyframes tileIn {
+    0% {transform: scale(0);}
+    70% {transform: scale(1.1);}
+    100% {transform: scale(1);}
 }
