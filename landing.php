@@ -1,5 +1,12 @@
 <?php
+    session_start();
     include "config.php";
+
+if((!isset($_SESSION["id"])) || ($_SESSION["id"] != session_id()))
+{
+     header('location: login');
+}        
+
 ?>
 
 <!DOCTYPE HTML>
@@ -53,9 +60,9 @@
                         <p style="font-weight: 200;"><?php echo $_SESSION["USR_VNAME"] . " " .    $_SESSION["USR_SNAME"];?></p>
                     </span>
                 </li>
-                    <a class="item" href="login" onClick="session_unset(); session_destroy()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <a class="item" href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 <li>
-                     <a class="item">About</a>
+                     <a class="item" href="about">About</a>
                 </li>
           </ul>
         </nav>
@@ -70,8 +77,8 @@
                   </div>
                 </div>
             </header>
-            <div id="content">
-                <main class="tiles">
+            <section id="content">
+                <div class="tiles">
                    <div class="box-1 gridbox"><div class="tilecontent">Freezer 1</div></div>
                    <div class="box-2 gridbox"><div class="tilecontent">Freezer 2</div></div>
                    <div class="box-3 gridbox"><div class="tilecontent">Freezer 3</div></div>
@@ -82,13 +89,11 @@
                    <div class="box-8 gridbox"><div class="tilecontent">Freezer 8</div></div>
                    <div class="box-9 gridbox"><div class="tilecontent">Freezer 9</div></div>
                    <div class="box-10 gridbox"><div class="tilecontent">Freezer 10</div></div>
-                   <div class="box-11 gridbox"><div class="tilecontent">Freezer 11</div></div>
-                   <div class="box-12 gridbox"><div class="tilecontent">Freezer 12</div></div>
-                </main>    
-            </div>
-            <footer>
-                
-            </footer>
-        </div>
+                </div>    
+            </section>
+       </div>
+       <div class="about">
+           Maximilian Roll / Florian Stella
+       </div>
     </div>
 </body>

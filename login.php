@@ -1,5 +1,7 @@
 <?php
+session_start();
 include "config.php";
+
 ?>
 
 
@@ -52,11 +54,14 @@ include "config.php";
                 else{
                 $user = mysqli_fetch_assoc($result);
                 if(password_verify($_POST['pass'],$user['password'])){
-        
+                    
+                    
+                       
                     $_SESSION["USR_Name"] = $user['username'];
                     $_SESSION["USR_PASS"] = $user['password'];
                     $_SESSION["USR_VNAME"] = $user['firstname'];
                     $_SESSION["USR_SNAME"] = $user['lastname'];
+                    $_SESSION["id"] = session_id();
         
                     header('location: landing');
                     $_SESSION["LOC"] = "landing";

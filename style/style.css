@@ -35,8 +35,6 @@ html {
 body {
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
     background-color: #2a2d32;
     text-rendering: optimizeLegibility;
 }
@@ -59,7 +57,7 @@ body {
 
 .page-wrapper{
   position: relative;
-  width: 100%;
+  width: 100vw;
   min-height: 100%;
   background: #2a2d32;
   background-color: #2a2d32;
@@ -67,6 +65,7 @@ body {
   transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
   animation: fadeIn .25s ease-out forwards;
+  overflow-y: auto;
 }
 
 .pull.left{
@@ -213,14 +212,14 @@ ul {
     display:flex;
     transition: all .5s ease-in-out;
     z-index: 300;
-    overflow-y: auto;
     transform: translateX(0px);
     visibility: visible;
+    padding-top: 70px;
 }
 
 #content-wrapper::before {
     content: '';
-    display: block;
+    display: flex;
     position: absolute;
     top: 0;
     left: 0;
@@ -241,29 +240,26 @@ ul {
 
 #content{
     z-index: 0;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    clear: both;
-    min-height: calc(100vh - 110px);
     transition: padding 0.6s ease-in-out;
     transition: -webkit-all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    padding-top: 70px;
+    height: calc(100vh - 70px);
+    width: 100vw;
+    
 }
 
 .tiles {
-    width: 68vw;
-    height: 85vh;
-    padding: 5vh 7.5vw 5vh 7.5vw;
+    width: 90vw;
+    height: 100%;
+    padding: 5vh 5vw 5vh 5vw;
     display: grid;
-    grid-template-columns: 30% 30% 30% 30%;
-    grid-template-rows: 30% 30% 30% 30%;
+    
+    grid-template-columns: auto;
+    grid-template-rows: 35% 35%;
     grid-gap: 1rem;
     grid-template-areas: 
-        "box1 box2 box3 box4"
-        "box5 box6 box7 box8"
-        "box9 box10 box11 box12";
+        "box1 box2 box3 box4 box5"
+        "box6 box7 box8 box9 box10"
 }
 
 .tiles .gridbox{
@@ -312,24 +308,6 @@ ul {
     opacity: 100%;
 }
 
-.tiles .box-1 {grid-area: box1; animation-delay: 50ms ;}
-.tiles .box-2 {grid-area: box2; animation-delay: 50ms ;}
-.tiles .box-3 {grid-area: box3; animation-delay: 150ms;}
-.tiles .box-4 {grid-area: box4; animation-delay: 300ms;}
-.tiles .box-5 {grid-area: box5; animation-delay: 150ms;}
-.tiles .box-6 {grid-area: box6; animation-delay: 200ms;}
-.tiles .box-7 {grid-area: box7; animation-delay: 250ms;}
-.tiles .box-8 {grid-area: box8; animation-delay: 250ms;}
-.tiles .box-9 {grid-area: box9; animation-delay: 250ms;}
-.tiles .box-10 {grid-area: box10; animation-delay: 250ms;}
-.tiles .box-11 {grid-area: box11; animation-delay: 250ms;}
-.tiles .box-12 {grid-area: box12; animation-delay: 250ms;}
-.tiles .box-13 {grid-area: box13; animation-delay: 250ms;}
-.tiles .box-14 {grid-area: box14; animation-delay: 250ms;}
-.tiles .box-15 {grid-area: box15; animation-delay: 250ms;}
-.tiles .box-16 {grid-area: box16; animation-delay: 250ms;}
-
-
 .login {
     text-align: center;
     min-width: 30vw;
@@ -359,6 +337,13 @@ ul {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+#search{
+    width: 90vw;
+    margin-left: 5vw;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .form{
@@ -423,6 +408,20 @@ ul {
 .link {
     cursor: pointer;
     color: #e6ffff;
+}
+
+.about{
+    position: relative;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    font-size: 13px;
+    font-weight: 400;
+    background-color: #36393f;
+    z-index: 2;
+    transition: margin-left .5s ease-in-out;
 }
 
 

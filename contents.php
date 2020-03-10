@@ -1,5 +1,11 @@
 <?php
+    session_start();
     include "config.php";
+
+    if((!isset($_SESSION["id"])) || ($_SESSION["id"] != session_id()))
+    {
+     header('location: login');
+    }  
 ?>
 
 <!DOCTYPE HTML>
@@ -71,10 +77,47 @@
                 </div>
             </header>
             <div id=content>
-                List
-            <footer>
-                
-            </footer>
+            <div class="table-wrapper">
+            <input id="search" class="form" type="text" onkeyup="filter()" placeholder="Search for Contents...">
+                <table id="table">
+                    <tr>
+                        <th><a href="contents?sort=id">Ticket ID</a></th>
+                        <th><a href="contents?sort=urgency">Urgency</a></th>
+                        <th><a href="contents?sort=time">Date</a></th>
+                        <th><a href="landing_admin.php?sort=email">E-Mail</a></th>
+                        <th><a href="landing_admin.php?sort=category">Category</a></th>
+                        <th><a href="landing_admin.php?sort=title">Title</a></th>
+                        <th><a href="landing_admin.php?sort=status">Status</a></th>
+                    </tr>
+                    <?php
+                        $query = "SELECT ticket.TicketID, ticket.Urgency, ticket.Title, ticket.Time, ticket.Description, ticket.Category, ticket.UserID, ticket.Status, users.Name, users.sname, users.Email 
+                        FROM ticket INNER JOIN users ON ticket.UserID=users.UserID";
+                        if(isset($_GET["sort"])){
+                            include "order.php";
+                        }
+                        $result = $link-> query($query);
+                        if($result->num_rows == 0){
+                            echo "<tr><td colspan = '7'>No tickets available</td></tr>";
+                        }
+                        else{
+                            while ($row = $result-> fetch_assoc()){
+                                switch($row['Status']){
+                                    case "0":
+                                        $status = "Open";
+                                        $statusmessage = "Set as closed";
+                                        break;
+                                    case "1":
+                                        $status = "Closed";
+                                        $statusmessage = "Set as open";
+                                        break;
+                                }
+                                echo "<tr class=\"tablebtn\" data-href=\"ticket_details.php?id=".$row['TicketID']."\"><td>".$row['TicketID']."</td><td>". $row['Urgency'] ."</td><td>".$row['Time']."</td><td>". $row['Email'] ."</td><td>". $row['Category'] ."</td><td>". $row['Title'] ."</td><td>". $status ."</td></tr>";
+                            }
+                        }
+                    ?>
+                </table>
+            </div>  
         </div>
+    </div>
     </div>
 </body>
