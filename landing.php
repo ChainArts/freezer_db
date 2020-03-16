@@ -77,23 +77,16 @@
             </header>
             <section id="content">
                 <div class="tiles">
-                   <div class="box-0 gridbox">
-                       <div class="tilecontent">
-                           <div class="tileDetails">Freezer 1</div>
-                           <div class="tileDetails">Details</div>
-                       </div>
-                    </div>
-                    
-                    
-                   <div class="box-1 gridbox"><div class="tilecontent"><div class="tileDetails">Details</div></div></div>
-                   <div class="box-2 gridbox"><div class="tilecontent"><div class="tileDetails">Details</div></div></div>
-                   <div class="box-3 gridbox"><div class="tilecontent"><div class="tileDetails">Details</div></div></div>
-                   <div class="box-4 gridbox"><div class="tilecontent"><div class="tileDetails">Details</div></div></div>
-                   <div class="box-5 gridbox"><div class="tilecontent"><div class="tileDetails">Details</div></div></div>
-                   <div class="box-6 gridbox"><div class="tilecontent"><div class="tileDetails">Details</div></div></div>
-                   <div class="box-7 gridbox"><div class="tilecontent"><div class="tileDetails">Details</div></div></div>
-                   <div class="box-8 gridbox"><div class="tilecontent"><div class="tileDetails">Details</div></div></div>
-                   <div class="box-9 gridbox"><div class="tilecontent"><div class="tileDetails">Details</div></div></div>
+                    <div class="box-0 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 1</div><div class="Bottom">Details</div></div></div></div>
+                    <div class="box-1 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 2</div><div class="Bottom">Details</div></div></div></div>
+                    <div class="box-2 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 3</div><div class="Bottom">Details</div></div></div></div>
+                    <div class="box-3 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 4</div><div class="Bottom">Details</div></div></div></div>
+                    <div class="box-4 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 5</div><div class="Bottom">Details</div></div></div></div>
+                    <div class="box-5 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 6</div><div class="Bottom">Details</div></div></div></div>
+                    <div class="box-6 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 7</div><div class="Bottom">Details</div></div></div></div>
+                    <div class="box-7 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 8</div><div class="Bottom">Details</div></div></div></div>
+                    <div class="box-8 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 9</div><div class="Bottom">Details</div></div></div></div>
+                    <div class="box-9 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 1</div><div class="Bottom">Details</div></div></div></div>
                 </div>    
             </section>
        </div>
