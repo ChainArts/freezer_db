@@ -4,10 +4,9 @@
 
     if((!isset($_SESSION["id"])) || ($_SESSION["id"] != session_id()))
     {
-     header('location: login');
-    }  
-?>
-
+        header('location: login');
+    }        
+ ?>
 <!DOCTYPE HTML>
 <html>
 
@@ -59,7 +58,7 @@
                         <p style="font-weight: 200;"><?php echo $_SESSION["USR_VNAME"] . " " .    $_SESSION["USR_SNAME"];?></p>
                     </span>
                 </li>
-                    <a class="item" href="login" onClick="session_unset(); session_destroy()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <a class="item" href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 <li>
                      <a class="item">About</a>
                 </li>

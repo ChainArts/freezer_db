@@ -23,11 +23,6 @@ function closeNav() {
   $('#content-wrapper').attr('onclick', '');
 }
 
-window.addEventListener('load', function () {
-    $(".gridbox").addClass("animateGrid");
-    setTimeout(500);
-});
-
 $(document).ready(function () {
     // Retrieve container position relative to viewport
 var rect = $('#container')[0].getBoundingClientRect();
