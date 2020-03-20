@@ -30,7 +30,6 @@ html {
     overflow: hidden;
     font-family: 'Source Sans Pro', sans-serif;
     color: #b9bbbe;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -120,11 +119,10 @@ body {
   font-weight: bold;
   color: #ADADAD;
   cursor: pointer;
-  background: #36393f;
   background-color: #36393f;
   border-bottom: 1px solid #535353;
   border-bottom-color: #535353; 
-  transition: all 0.3 ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .sidenav-main .item:hover{
@@ -200,15 +198,13 @@ ul {
     flex: 1;
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
-    color: #FFF;    
+    color: #FFF;
     font-weight: 200;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    text-align: center;    
-    
-    
+    text-align: center;     
 }
 
 #content-wrapper {
@@ -263,8 +259,8 @@ ul {
     grid-template-rows: auto;
     grid-gap: 1rem;
     grid-template-areas: 
-        "box1 box2 box3 box4 box5"
-        "box6 box7 box8 box9 box10"
+        "box1 box2 box3 box4 box5 box6";
+        "box7 box8 box9 box10 box11 box12";
 }
 
 .tiles .gridbox{
@@ -293,12 +289,11 @@ ul {
     justify-content: center;
     align-items: center;
     z-index: 3;
-    filter: none;
     opacity: 0%;
     transition: all 300ms ease-in-out;
+    border-radius: 2px;
     height: 100%;
     width: 100%;
-    border-radius: 2px;
 }
 
 .tiles .gridbox:hover .tilecontent{
@@ -306,14 +301,14 @@ ul {
     opacity: 100%;
 }
 
-.tileDetails{
-    display:block;
-    position:absolute;
+.tilecontent .tileDetails{
+    display: block;
+    position: absolute;
     text-align: center;
 }
 
 .tileDetails .Top{
-    margin-bottom: 75%;
+    margin-bottom: 8vh;
     padding: 15px;
     color: #6279CA;
     background: #e6ffff;
@@ -321,7 +316,6 @@ ul {
 }
 
 .tileDetails .Bottom{
-    margin-top: 75%;
     padding: 15px;
     color: #6279CA;
     background: #e6ffff;

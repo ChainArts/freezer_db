@@ -27,7 +27,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/utils/Draggable.min.js"></script>
-    <script src="js/parallax.js"></script>
+    <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -52,10 +52,10 @@
                     <a class="item" href="contents"><i class="fas fa-fish"></i> Contents</a>
                 </li>
                 <li>
-                    <a href="insert_item" class="item"><i class="fas fa-pencil-alt"></i> Add Item</a>
+                    <a class="item" href="insert_item"><i class="fas fa-pencil-alt"></i> Add Item</a>
                 </li>
                 <li>    
-                    <span class="item">
+                    <span class="item" style="cursor: auto;">
                         <h1>Currently logged in as:</h1>
                         <p style="font-weight: 200;"><?php echo $_SESSION["USR_VNAME"] . " " .    $_SESSION["USR_SNAME"];?></p>
                     </span>
@@ -77,7 +77,14 @@
             </header>
             <section id="content">
                 <div class="tiles">
-                    <div class="box-0 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 1</div><div class="Bottom">Details</div></div></div></div>
+                    <div class="box-0 gridbox">   
+                       <div class="tilecontent">
+                            <div class=tileDetails>
+                                <div class="Top">Freezer 1</div>
+                                <div class="Bottom">Details</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="box-1 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 2</div><div class="Bottom">Details</div></div></div></div>
                     <div class="box-2 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 3</div><div class="Bottom">Details</div></div></div></div>
                     <div class="box-3 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 4</div><div class="Bottom">Details</div></div></div></div>
@@ -86,7 +93,9 @@
                     <div class="box-6 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 7</div><div class="Bottom">Details</div></div></div></div>
                     <div class="box-7 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 8</div><div class="Bottom">Details</div></div></div></div>
                     <div class="box-8 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 9</div><div class="Bottom">Details</div></div></div></div>
-                    <div class="box-9 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 1</div><div class="Bottom">Details</div></div></div></div>
+                    <div class="box-9 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 10</div><div class="Bottom">Details</div></div></div></div>
+                    <div class="box-10 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 11</div><div class="Bottom">Details</div></div></div></div>
+                    <div class="box-11 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 12</div><div class="Bottom">Details</div></div></div></div>
                 </div>    
             </section>
        </div>
