@@ -1,11 +1,3 @@
-function delay(URL) {
-    $("body").removeClass("fade");
-    $("body").addClass("fade");
-    setTimeout(function () {
-        window.location = URL;
-    }, 250)
-};
-
 /* Shift the Sidenav + Content 250px to the right, Make dark overlay filter visible*/
 function openNav() {
   document.getElementById("sidenav-main").style.transform = "translateX(0px)";

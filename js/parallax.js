@@ -36,3 +36,12 @@ $(window).on('resize scroll', function(){
   rect = $('#container')[0].getBoundingClientRect();
 })
 });
+
+function delay(URL) {
+    $("body").removeClass("fade");
+    $("body").addClass("fade");
+    setTimeout(function () {
+        window.location = URL;
+    }, 250)
+};
+
