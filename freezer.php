@@ -11,7 +11,7 @@
 <html>
 
 <head>
-    <title> Freezer Management | Contents </title>
+    <title> Freezer Management | Freezer </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -44,10 +44,10 @@
                    <a class="item" href="landing">Home</a>
                </li>
                 <li>
-                    <a class="item" href="Freezer"><i class="far fa-snowflake"></i> Freezer</a>
+                    <a class="item" href="Freezer" style= "background-color: #26292f;"><i class="far fa-snowflake"></i> Freezer</a>
                 </li>
                 <li>
-                    <a class="item" href="contents" style= "background-color: #26292f;"><i class="far fa-list-alt"></i> Contents</a>
+                    <a class="item" href="contents"><i class="far fa-list-alt"></i> Contents</a>
                 </li>
                 <li>
                     <a href="insert" class="item"><i class="fas fa-pencil-alt"></i> Add Item</a>
@@ -78,50 +78,13 @@
                     </div>
                   </div>
                   <div class="box-right">
-                     CONTENTS
+                     FREEZER
                   </div>
                 </div>
             </header>
             <div id=content>
             <div class="table-wrapper">
-            <input id="search" class="form" type="text" onkeyup="filter()" placeholder="Search for Contents...">
-                <table id="table">
-                    <tr>
-                        <th><a href="contents?sort=id">Item ID</a></th>
-                        <th><a href="contents?sort=urgency">Urgency</a></th>
-                        <th><a href="contents?sort=time">Date</a></th>
-                        <th><a href="contents?sort=email">E-Mail</a></th>
-                        <th><a href="contents?sort=category">Category</a></th>
-                        <th><a href="contents.php?sort=title">Title</a></th>
-                        <th><a href="contents?sort=status">Status</a></th>
-                    </tr>
-                    <?php
-                        $query = "SELECT ticket.TicketID, ticket.Urgency, ticket.Title, ticket.Time, ticket.Description, ticket.Category, ticket.UserID, ticket.Status, users.Name, users.sname, users.Email 
-                        FROM ticket INNER JOIN users ON ticket.UserID=users.UserID";
-                        if(isset($_GET["sort"])){
-                            include "order.php";
-                        }
-                        $result = $link-> query($query);
-                        if($result->num_rows == 0){
-                            echo "<tr><td colspan = '7'>Freezer is empty</td></tr>";
-                        }
-                        else{
-                            while ($row = $result-> fetch_assoc()){
-                                switch($row['Status']){
-                                    case "0":
-                                        $status = "Open";
-                                        $statusmessage = "Set as closed";
-                                        break;
-                                    case "1":
-                                        $status = "Closed";
-                                        $statusmessage = "Set as open";
-                                        break;
-                                }
-                                echo "<tr class=\"tablebtn\" data-href=\"ticket_details.php?id=".$row['TicketID']."\"><td>".$row['TicketID']."</td><td>". $row['Urgency'] ."</td><td>".$row['Time']."</td><td>". $row['Email'] ."</td><td>". $row['Category'] ."</td><td>". $row['Title'] ."</td><td>". $status ."</td></tr>";
-                            }
-                        }
-                    ?>
-                </table>
+            <input id="search" class="form" type="text" onkeyup="filter()" placeholder="Search for Freezer...">
             </div>  
         </div>
     </div>

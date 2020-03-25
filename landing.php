@@ -36,7 +36,7 @@
           <div class="header">
              <div class="pull-right">
                 <div class="closebtn" onclick = "closeNav()">
-                    CLOSE &#10006;
+                    CLOSE
                 </div>
              </div>
               
@@ -46,13 +46,13 @@
                    <a class="item" onclick="closeNav()">Home</a>
                </li>
                 <li>
-                    <a class="item" href="Freezer"><i class="fas fa-clipboard-list"></i> Freezer</a>
+                    <a class="item" href="Freezer"><i class="far fa-snowflake"></i>&nbsp;&nbsp;Freezer</a>
                 </li>
                 <li>
-                    <a class="item" href="contents"><i class="fas fa-fish"></i> Contents</a>
+                    <a class="item" href="contents"><i class="far fa-list-alt"></i>&nbsp;&nbsp;Contents</a>
                 </li>
                 <li>
-                    <a class="item" href="insert_item"><i class="fas fa-pencil-alt"></i> Add Item</a>
+                    <a class="item" href="insert"><i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Add Item</a>
                 </li>
                 <li>    
                     <span class="item" style="cursor: auto;">
@@ -69,8 +69,15 @@
         <div id="content-wrapper">
             <header id="header">
                 <div class="header-main">
-                  <div class="box-left">
-                       <div class="btn_menu" onclick="openNav()">&#9776;  MENU</div>
+                   <div class="box-left">
+                    <div class="btn_menu" onclick="openNav()">
+                        <div class="menu-ico">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                        <span>MENU</span>
+                    </div>
                   </div>
                   <div class="box-right">DASHBOARD</div>
                 </div>

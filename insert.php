@@ -47,10 +47,10 @@
                     <a class="item" href="Freezer"><i class="far fa-snowflake"></i> Freezer</a>
                 </li>
                 <li>
-                    <a class="item" href="contents" style= "background-color: #26292f;"><i class="far fa-list-alt"></i> Contents</a>
+                    <a class="item" href="contents"><i class="far fa-list-alt"></i> Contents</a>
                 </li>
                 <li>
-                    <a href="insert" class="item"><i class="fas fa-pencil-alt"></i> Add Item</a>
+                    <a href="insert" class="item" style= "background-color: #26292f;"><i class="fas fa-pencil-alt"></i> Add Item</a>
                 </li>
                 <li>    
                     <span class="item" style="cursor: auto;">
@@ -67,7 +67,7 @@
         <div id="content-wrapper">
             <header id="header">
                 <div class="header-main">
-                   <div class="box-left">
+                  <div class="box-left">
                     <div class="btn_menu" onclick="openNav()">
                         <div class="menu-ico">
                             <div class="bar"></div>
@@ -78,52 +78,28 @@
                     </div>
                   </div>
                   <div class="box-right">
-                     CONTENTS
+                     ADD ITEM
                   </div>
                 </div>
             </header>
-            <div id=content>
-            <div class="table-wrapper">
-            <input id="search" class="form" type="text" onkeyup="filter()" placeholder="Search for Contents...">
-                <table id="table">
-                    <tr>
-                        <th><a href="contents?sort=id">Item ID</a></th>
-                        <th><a href="contents?sort=urgency">Urgency</a></th>
-                        <th><a href="contents?sort=time">Date</a></th>
-                        <th><a href="contents?sort=email">E-Mail</a></th>
-                        <th><a href="contents?sort=category">Category</a></th>
-                        <th><a href="contents.php?sort=title">Title</a></th>
-                        <th><a href="contents?sort=status">Status</a></th>
-                    </tr>
-                    <?php
-                        $query = "SELECT ticket.TicketID, ticket.Urgency, ticket.Title, ticket.Time, ticket.Description, ticket.Category, ticket.UserID, ticket.Status, users.Name, users.sname, users.Email 
-                        FROM ticket INNER JOIN users ON ticket.UserID=users.UserID";
-                        if(isset($_GET["sort"])){
-                            include "order.php";
-                        }
-                        $result = $link-> query($query);
-                        if($result->num_rows == 0){
-                            echo "<tr><td colspan = '7'>Freezer is empty</td></tr>";
-                        }
-                        else{
-                            while ($row = $result-> fetch_assoc()){
-                                switch($row['Status']){
-                                    case "0":
-                                        $status = "Open";
-                                        $statusmessage = "Set as closed";
-                                        break;
-                                    case "1":
-                                        $status = "Closed";
-                                        $statusmessage = "Set as open";
-                                        break;
-                                }
-                                echo "<tr class=\"tablebtn\" data-href=\"ticket_details.php?id=".$row['TicketID']."\"><td>".$row['TicketID']."</td><td>". $row['Urgency'] ."</td><td>".$row['Time']."</td><td>". $row['Email'] ."</td><td>". $row['Category'] ."</td><td>". $row['Title'] ."</td><td>". $status ."</td></tr>";
-                            }
-                        }
-                    ?>
-                </table>
-            </div>  
-        </div>
-    </div>
+            <div id="content">
+            <div class="form-wrapper">
+            <form action="create_ticket.php" method="POST" id="ticket">
+                <span>Category</span>
+                <div class="Category input">
+                </div>
+                <div class="vname input">
+                    <span>Place<span class="error"><?php //echo $locErr ?></span></span>
+                    <input required type="text" name="Place" class="form" autocomplete="off" value="<?php //if(isset($_POST['Place'])) echo $_POST['Place']; ?>">
+                </div> 
+                <div class="nname input">
+                    <span>Title<span class="error"><?php// echo $titleErr ?></span></span>
+                    <input required type="text" name="Title" class="form" autocomplete="off" value="<?php //if(isset($_POST['Place'])) echo $_POST['Title']; ?>">
+                </div>
+                <input type="submit" name="create_ticket" value="ADD ITEM" class="btn">
+            </form>
+            </div>    
+            </div>
+         </div>
     </div>
 </body>
