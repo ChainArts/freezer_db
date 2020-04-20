@@ -80,14 +80,14 @@ include "config.php";
             <span class="title">
                 FREEZER MANAGEMENT
             </span>
-            <form method="post" class=login action="<?php echo $_SERVER["PHP_SELF"];?>">
+            <form method="post" class="login" action="<?php echo $_SERVER["PHP_SELF"];?>">
                 <div class="usr input">
                     <span>Username<span class="error"><?php echo $nameErr ?></span></span>
-                    <input type="text" name="username" class="form" value="<?php if (isset($_POST['username'])) echo $_POST['username'];?>">
+                    <input type="text" name="username" autocomplete="off" class="form" value="<?php if (isset($_POST['username'])) echo $_POST['username'];?>">
                 </div>
                 <div class="pwd input">
                     <span>Password<span class="error"><?php echo $passErr ?></span></span>
-                    <input type="password" name="pass" class="form">
+                    <input type="password" name="pass" autocomplete="off" class="form">
                 </div>
                 <a href="javascript:delay('reset')" class="link">Forgot password?</a>
                 <input type="submit" name="login" value="LOGIN" class="btn">

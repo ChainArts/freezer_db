@@ -84,19 +84,22 @@
             </header>
             <div id="content">
             <div class="form-wrapper">
-            <form action="create_ticket.php" method="POST" id="ticket">
+            <form action="" method="POST" class="login">
+                
+                <div class="input">
+                    <span>Name<span class="error"><?php //echo $locErr ?></span></span>
+                    <input required type="text" name="Place" class="form" autocomplete="off" value="<?php //if(isset($_POST['Place'])) echo $_POST['Place']; ?>">
+                </div> 
+                <div class="input">
+                    <span>Status<span class="error"><?php// echo $titleErr ?></span></span>
+                    <input required type="text" name="Title" class="form" autocomplete="off" value="<?php //if(isset($_POST['Place'])) echo $_POST['Title']; ?>">
+                </div>
+                
+                
                 <span>Category</span>
                 <div class="Category input">
                 </div>
-                <div class="vname input">
-                    <span>Place<span class="error"><?php //echo $locErr ?></span></span>
-                    <input required type="text" name="Place" class="form" autocomplete="off" value="<?php //if(isset($_POST['Place'])) echo $_POST['Place']; ?>">
-                </div> 
-                <div class="nname input">
-                    <span>Title<span class="error"><?php// echo $titleErr ?></span></span>
-                    <input required type="text" name="Title" class="form" autocomplete="off" value="<?php //if(isset($_POST['Place'])) echo $_POST['Title']; ?>">
-                </div>
-                <input type="submit" name="create_ticket" value="ADD ITEM" class="btn">
+                <input type="submit" name="add_item" value="ADD ITEM" class="btn">
             </form>
             </div>    
             </div>

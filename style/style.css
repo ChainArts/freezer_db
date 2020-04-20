@@ -217,6 +217,7 @@ ul {
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     text-align: center;
+    z-index: 0;
 }
 
 .btn_menu:hover{
@@ -254,7 +255,7 @@ ul {
     top: 0;
     left: 100%;
     z-index: 1;
-    transition: 0.3s;
+    transition: 0.3s ease-in-out;
 }
 
 .menu-ico .bar:nth-child(1){top: 0;}
@@ -265,6 +266,10 @@ ul {
 
 .menu-ico .bar:nth-child(3){top: 8px;}
 .menu-ico .bar:nth-child(3)::after{transition-delay: 0.3s;}
+
+.btn_menu:hover .bar::after{
+    left: 0%;
+}
 
 .box-right{
     display: flex;
@@ -316,7 +321,7 @@ ul {
     z-index: 0;
     transition: all 0.5s ease-in-out;
     height: calc(100vh - 70px);
-    width: calc(100vw - 232px);
+    width: 100vw;
     
 }
 
@@ -434,7 +439,7 @@ ul {
 }
 
 #search{
-    width: calc(100vw - 232px);
+    width: calc(100vw - 262px);
     margin: 25px 116px 25px 116px;
     user-select: text;
 }
@@ -442,6 +447,7 @@ ul {
 .form-wrapper{
     width: calc(100vw - 928px);
     margin: 25vh 464px 25px 464px;
+    transition: all .3s;
 }
 
 
@@ -479,6 +485,77 @@ ul {
     position: absolute;
     right: 0;
     color: tomato;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: transparent;
+    padding: 0px !important;
+    transition: all .25s;
+    width: calc(100vw-232px);
+    margin: 25px 116px 25px 116px;
+}
+
+tr{
+    background-color: #40444b;
+    transition: background-color .25s;
+}
+
+tr:hover{
+    background-color: #26292f;
+    cursor: pointer;
+}
+
+table,
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+tr td div{
+    max-height: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: max-height 0.3s, padding 0.3s;
+}
+
+tr.active td div {
+    max-height: 100px;
+    padding: 10px 10px;
+    transition: max-height 0.6s, padding 0.6s;
+}
+
+tr:not(:last-child){
+   border-bottom: 1px solid #535353;
+}
+
+th {
+    width: 15vw;
+    cursor: pointer;
+    transition: all .2s ease-out;
+    background-color: #40444b;;
+    font-weight: 600;
+    color: #FCFFEB;
+}
+
+th a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    transition: all .2s ease-out;
+    color: #FCFFEB;
+}
+
+th:hover {
+    background-color: #26292f;;
+}
+
+th:hover>a {
+    color: #FFF;
 }
 
 .input{

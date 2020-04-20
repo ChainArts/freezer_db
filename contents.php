@@ -83,41 +83,52 @@
                 </div>
             </header>
             <div id=content>
-            <div class="table-wrapper">
             <input id="search" class="form" type="text" onkeyup="filter()" placeholder="Search for Contents...">
+                <div class="table-wrapper">
                 <table id="table">
                     <tr>
                         <th><a href="contents?sort=id">Item ID</a></th>
-                        <th><a href="contents?sort=urgency">Urgency</a></th>
+                        <th><a href="contents?sort=Name">Name</a></th>
                         <th><a href="contents?sort=time">Date</a></th>
-                        <th><a href="contents?sort=email">E-Mail</a></th>
+                        <th><a href="contents?sort=User">User</a></th>
+                        <th><a href="contents?sort=location">Freezer</a></th>
                         <th><a href="contents?sort=category">Category</a></th>
-                        <th><a href="contents.php?sort=title">Title</a></th>
-                        <th><a href="contents?sort=status">Status</a></th>
                     </tr>
                     <?php
-                        $query = "SELECT ticket.TicketID, ticket.Urgency, ticket.Title, ticket.Time, ticket.Description, ticket.Category, ticket.UserID, ticket.Status, users.Name, users.sname, users.Email 
-                        FROM ticket INNER JOIN users ON ticket.UserID=users.UserID";
+                        $query = "SELECT contents.item_id, contents.name, contents.date, contents.location, contents.user, contents.type
+                        FROM contents INNER JOIN userdata ON contents.user=userdata.username";
                         if(isset($_GET["sort"])){
-                            include "order.php";
+                            $order = $_GET["sort"];
+
+                            switch($order){
+                            case "id":
+                                $query .= " ORDER BY item_id DESC";
+                                break;
+                            case "Name":
+                                $query .= " ORDER BY name";
+                                break;
+                            case "time":
+                                $query .= " ORDER BY date DESC";
+                                break;
+                            case "User":
+                                $query .= " ORDER BY user";
+                                break;
+                            case "category":
+                                $query .= " ORDER BY type";
+                                break;
+                            case "location":
+                                $query .= " ORDER BY location";
+                                break;
+                                
+                            }
                         }
                         $result = $link-> query($query);
                         if($result->num_rows == 0){
                             echo "<tr><td colspan = '7'>Freezer is empty</td></tr>";
                         }
                         else{
-                            while ($row = $result-> fetch_assoc()){
-                                switch($row['Status']){
-                                    case "0":
-                                        $status = "Open";
-                                        $statusmessage = "Set as closed";
-                                        break;
-                                    case "1":
-                                        $status = "Closed";
-                                        $statusmessage = "Set as open";
-                                        break;
-                                }
-                                echo "<tr class=\"tablebtn\" data-href=\"ticket_details.php?id=".$row['TicketID']."\"><td>".$row['TicketID']."</td><td>". $row['Urgency'] ."</td><td>".$row['Time']."</td><td>". $row['Email'] ."</td><td>". $row['Category'] ."</td><td>". $row['Title'] ."</td><td>". $status ."</td></tr>";
+                            while($row = $result -> fetch_assoc()){
+                                echo "<tr class=\"tablebtn\" data-href=\"content_details.php?id=".$row['item_id']."\"><td>".$row['item_id']."</td><td>". $row['name'] ."</td><td>".$row['date']."</td><td>". $row['user'] ."</td><td>". $row['location'] ."</td><td>". $row['type'] ."</td>";
                             }
                         }
                     ?>
