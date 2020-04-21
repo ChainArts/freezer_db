@@ -85,6 +85,23 @@
             <div id=content>
             <div class="table-wrapper">
             <input id="search" class="form" type="text" onkeyup="filter()" placeholder="Search for Freezer...">
+            <select name="Freezer" class="ddown" required="pleb">
+                        <i class="fas fa-angle-down"></i>
+                        <option value="" class="option">Select</option>
+                        <?php
+                            $query = "SELECT freezer.brand, freezer.model FROM freezer";
+                            $result = $link -> query($query);
+                            if($result -> num_rows == 0){
+                            echo "No freezers in database, please add one first";
+                            }
+                            else{
+                                while($row = $result -> fetch_assoc()){
+                                    echo "<option value=".$row['model']." class = 'option'>".$row['brand'].'&nbsp'.$row['model']."</option>";
+                                }
+                            }
+                            
+                        ?>
+                    </select>
             </div>  
         </div>
     </div>

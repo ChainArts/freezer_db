@@ -84,25 +84,22 @@
             </header>
             <section id="content">
                 <div class="tiles">
-                    <div class="box-0 gridbox">   
-                       <div class="tilecontent">
-                            <div class=tileDetails>
-                                <div class="Top">Freezer 1</div>
-                                <div class="Bottom">Details</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-1 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 2</div><div class="Bottom">Details</div></div></div></div>
-                    <div class="box-2 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 3</div><div class="Bottom">Details</div></div></div></div>
-                    <div class="box-3 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 4</div><div class="Bottom">Details</div></div></div></div>
-                    <div class="box-4 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 5</div><div class="Bottom">Details</div></div></div></div>
-                    <div class="box-5 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 6</div><div class="Bottom">Details</div></div></div></div>
-                    <div class="box-6 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 7</div><div class="Bottom">Details</div></div></div></div>
-                    <div class="box-7 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 8</div><div class="Bottom">Details</div></div></div></div>
-                    <div class="box-8 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 9</div><div class="Bottom">Details</div></div></div></div>
-                    <div class="box-9 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 10</div><div class="Bottom">Details</div></div></div></div>
-                    <div class="box-10 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 11</div><div class="Bottom">Details</div></div></div></div>
-                    <div class="box-11 gridbox"><div class="tilecontent"><div class=tileDetails><div class="Top">Freezer 12</div><div class="Bottom">Details</div></div></div></div>
+                    <?php
+                        $count = '-1';
+                        $query = "SELECT freezer.brand, freezer.model FROM freezer";
+                        $result = $link -> query($query);
+                        if($result -> num_rows == 0){
+                            echo "No freezers in database, please add one first";
+                        }
+                        else{
+                            while($row = $result -> fetch_assoc()){
+                                $count = $count + '1';
+                                echo "<div class='box-".$count." gridbox'><div class='tilecontent'><div class=tileDetails><div class='Top'>".$row['brand']. "<br>" .$row['model']."</div><div class='Bottom'>Details</div></div></div></div>";
+                            }
+                        }
+                        $count = $count + '1';
+                        echo "<div class='box-".$count." gridbox'><div class='tilecontent'><div class=tileAdd></div></div></div>";
+                    ?>
                 </div>    
             </section>
        </div>

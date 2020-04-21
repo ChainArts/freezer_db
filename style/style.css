@@ -337,8 +337,8 @@ ul {
     grid-template-rows: auto;
     grid-gap: 1rem;
     grid-template-areas: 
-        "box1 box2 box3 box4 box5 box6";
-        "box7 box8 box9 box10 box11 box12";
+        "box0 box1 box2 box3 box4 box5";
+        "box6 box7 box8 box9 box10 box11";
 }
 
 .tiles .gridbox{
@@ -385,12 +385,20 @@ ul {
     text-align: center;
 }
 
+.tilecontent .tileAdd{
+    display:block;
+    position: absolute;
+    text-align: center;
+    background: #FFF;
+}
+
 .tileDetails .Top{
     margin-bottom: 8vh;
     padding: 15px;
     color: #6279CA;
     background: #e6ffff;
     border-radius:2px;
+    opacity: 100%;
 }
 
 .tileDetails .Bottom{
@@ -443,6 +451,30 @@ ul {
     margin: 25px 116px 25px 116px;
     user-select: text;
 }
+
+.ddown {
+    align-content: center;
+    padding: 15px;
+    min-height: 50px;
+    min-width: 300px;
+    transition: all .25s;
+	cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #40444b url(angle-down-solid.svg) 96% / 4% no-repeat;/
+    color:#b9bbbe;
+}
+
+.ddown:focus {
+    box-shadow: 0px 0px 5px #e6ffff;
+}
+
+.option{
+    background-color: #40444b;
+    color:#b9bbbe;
+}
+
 
 .form-wrapper{
     width: calc(100vw - 928px);
