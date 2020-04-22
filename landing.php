@@ -8,7 +8,6 @@
     }        
 
 ?>
-
 <!DOCTYPE HTML>
 <html>
 
@@ -46,7 +45,7 @@
                    <a class="item" onclick="closeNav()">Home</a>
                </li>
                 <li>
-                    <a class="item" href="Freezer"><i class="far fa-snowflake"></i>&nbsp;&nbsp;Freezer</a>
+                    <a class="item" href="Freezer.php?freezer=1"><i class="far fa-snowflake"></i>&nbsp;&nbsp;Freezer</a>
                 </li>
                 <li>
                     <a class="item" href="contents"><i class="far fa-list-alt"></i>&nbsp;&nbsp;Contents</a>
@@ -86,7 +85,7 @@
                 <div class="tiles">
                     <?php
                         $count = '-1';
-                        $query = "SELECT freezer.brand, freezer.model FROM freezer";
+                        $query = "SELECT freezer.frz_id, freezer.brand, freezer.model FROM freezer";
                         $result = $link -> query($query);
                         if($result -> num_rows == 0){
                             echo "No freezers in database, please add one first";
@@ -94,11 +93,16 @@
                         else{
                             while($row = $result -> fetch_assoc()){
                                 $count = $count + '1';
-                                echo "<div class='box-".$count." gridbox'><div class='tilecontent'><div class=tileDetails><div class='Top'>".$row['brand']. "<br>" .$row['model']."</div><div class='Bottom'>Details</div></div></div></div>";
+                                echo "<div class='box-".$count." gridbox'><div class='tilecontent'><div class=tileDetails><div class='Top'>".$row['brand']. "<br>" .$row['model']."</div><div class='Bottom' onclick=\"window.location='freezer.php?freezer=".$row['frz_id']."';\">Details</div></div></div></div>";
                             }
                         }
                         $count = $count + '1';
-                        echo "<div class='box-".$count." gridbox'><div class='tilecontent'><div class=tileAdd></div></div></div>";
+                        echo 
+                        "<div class=\"box-".$count." gridbox\" onclick=\"window.location='addfreezer';\" style=\"cursor: pointer;\">
+                            <div class='tilecontent'>
+                                <div class=tileAdd><i class=\"fas fa-plus-square\"></i></div>
+                            </div>
+                         </div>";
                     ?>
                 </div>    
             </section>

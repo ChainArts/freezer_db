@@ -44,7 +44,7 @@
                    <a class="item" href="landing">Home</a>
                </li>
                 <li>
-                    <a class="item" href="Freezer"><i class="far fa-snowflake"></i> Freezer</a>
+                    <a class="item" href="Freezer.php?freezer=1"><i class="far fa-snowflake"></i> Freezer</a>
                 </li>
                 <li>
                     <a class="item" href="contents"><i class="far fa-list-alt"></i> Contents</a>
@@ -84,20 +84,33 @@
             </header>
             <div id="content">
             <div class="form-wrapper">
-            <form action="" method="POST" class="login">
+            <form action="/additem.php" method="POST" class="login">
                 
                 <div class="input">
-                    <span>Name<span class="error"><?php //echo $locErr ?></span></span>
-                    <input required type="text" name="Place" class="form" autocomplete="off" value="<?php //if(isset($_POST['Place'])) echo $_POST['Place']; ?>">
+                    <span>Name<span class="error"></span></span>
+                    <input required type="text" name="Name" class="form" autocomplete="off">
                 </div> 
                 <div class="input">
-                    <span>Status<span class="error"><?php// echo $titleErr ?></span></span>
-                    <input required type="text" name="Title" class="form" autocomplete="off" value="<?php //if(isset($_POST['Place'])) echo $_POST['Title']; ?>">
+                    <span>Type<span class="error"></span></span>
+                    <input required type="text" name="type" class="form" autocomplete="off">
                 </div>
                 
-                
-                <span>Category</span>
-                <div class="Category input">
+                <div class="input">
+                <select name="location" class="ddown" required>
+                        <option value="" class="option">Select</option>
+                        <?php
+                            $query = "SELECT freezer.frz_id, freezer.brand, freezer.model FROM freezer";
+                            $result = $link -> query($query);
+                            if($result -> num_rows == 0){
+                            echo "No freezers in database, please add one first";
+                            }
+                            else{
+                                while($row = $result -> fetch_assoc()){
+                                    echo "<option value=".$row['frz_id'].">".$row['brand'].'&nbsp'.$row['model']."</option>";
+                                }
+                            }
+                        ?>
+                </select>
                 </div>
                 <input type="submit" name="add_item" value="ADD ITEM" class="btn">
             </form>

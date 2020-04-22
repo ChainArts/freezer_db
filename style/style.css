@@ -47,8 +47,8 @@ body {
     align-items: center;
     animation: fadeIn .25s ease-out forwards;
     z-index: 2;
-    transition: -webkit-transform 0.5s ease-in-out;
-    transition: transform 0.5s ease-in-out;
+    transition: -webkit-transform 0.40s ease-in-out;
+    transition: transform 0.40s ease-in-out;
 }
 
 .hidden{
@@ -62,8 +62,8 @@ body {
   background: #2a2d32;
   background-color: #2a2d32;
   z-index: 2;
-  transition: -webkit-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.40s ease-in-out;
+  transition: transform 0.40s ease-in-out;
   animation: fadeIn .25s ease-out forwards;
   overflow-y: auto;
 }
@@ -89,7 +89,7 @@ body {
   background-color: #36393f;
   overflow-y: auto;
   z-index: 301;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.40s ease-in-out;
   white-space: nowrap;
   overflow-x: hidden;
   transform: translateX(-250px);
@@ -107,7 +107,7 @@ body {
   border-bottom-color: #535353; 
   overflow: hidden;
   z-index: 1;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.40s ease-in-out;
   
 }
 
@@ -289,7 +289,7 @@ ul {
 
 #content-wrapper {
     display:flex;
-    transition: all .5s ease-in-out;
+    transition: all .40s ease-in-out;
     z-index: 300;
     transform: translateX(0px);
     visibility: visible;
@@ -309,7 +309,7 @@ ul {
     z-index: 300;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.40s ease-in-out;
 }
 
 .navbar-open.page-wrapper::before{
@@ -319,14 +319,13 @@ ul {
 
 #content{
     z-index: 0;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.40s ease-in-out;
     height: calc(100vh - 70px);
     width: 100vw;
     
 }
 
 .tiles {
-    
     font-family: 'Raleway', sans-serif;
     width: 90vw;
     height: 73%;
@@ -367,49 +366,59 @@ ul {
     justify-content: center;
     align-items: center;
     z-index: 3;
-    opacity: 0%;
-    transition: all 300ms ease-in-out;
-    border-radius: 2px;
     height: 100%;
     width: 100%;
+    border-radius:2px;
+    transition: all 300ms ease-in-out;
 }
 
 .tiles .gridbox:hover .tilecontent{
     background-color: rgba(0,0,0,0.75);
-    opacity: 100%;
 }
 
 .tilecontent .tileDetails{
     display: block;
     position: absolute;
     text-align: center;
+    border-radius:2px;
 }
 
 .tilecontent .tileAdd{
     display:block;
     position: absolute;
     text-align: center;
-    background: #FFF;
+    font-size: 42px;
+    color: #e6ffff;
+    opacity: 0%;
+    transition: all 300ms ease-in-out;
 }
 
-.tileDetails .Top{
-    margin-bottom: 8vh;
-    padding: 15px;
-    color: #6279CA;
-    background: #e6ffff;
-    border-radius:2px;
+.gridbox:hover .tilecontent .tileAdd{
     opacity: 100%;
 }
 
-.tileDetails .Bottom{
+.tileDetails .Top{
+    padding: 15px;
+    color: #6279CA;
+    background: #e6ffff;
+    opacity: 100%;
+    margin-bottom: 5vh;
+}
+
+.tilecontent .tileDetails .Bottom{
     padding: 15px;
     color: #6279CA;
     background: #e6ffff;
     cursor: pointer;
-    border-radius:2px;
+    opacity: 0%;
+    transition: all 300ms ease-in-out;
 }
 
-.tileDetails .Bottom:hover{
+.gridbox:hover .tilecontent .tileDetails .Bottom{
+    opacity: 100%;
+}
+
+.gridbox:hover .tilecontent .tileDetails .Bottom:hover{
     background: #c4dddd;
     color: #4057A8;
 }
@@ -457,13 +466,16 @@ ul {
     padding: 15px;
     min-height: 50px;
     min-width: 300px;
+    margin: 25px 116px 25px 116px;
     transition: all .25s;
+    color:#b9bbbe;
 	cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     background: #40444b url(angle-down-solid.svg) 96% / 4% no-repeat;/
-    color:#b9bbbe;
+    filter: brightness(1000);
+    
 }
 
 .ddown:focus {
@@ -475,13 +487,36 @@ ul {
     color:#b9bbbe;
 }
 
+.details{
+    margin: 0px 116px 0px 116px;
+    background-color: #40444b;
+}
+
+.add-right-btn{
+    float: right;
+    margin: 25px 116px 25px 116px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #6279CA;
+    border-radius: 2px;
+    height: 50px;
+    width: 300px;
+    text-align: center;
+    line-height: 50px;
+    background: #e6ffff;
+    transition: all 0.2s ease-in-out;
+}
+
+.add-right-btn:hover{
+    background: #c4dddd;
+    color: #4057A8;    
+}
 
 .form-wrapper{
     width: calc(100vw - 928px);
     margin: 25vh 464px 25px 464px;
     transition: all .3s;
 }
-
 
 .form{
     margin-top: 5px;

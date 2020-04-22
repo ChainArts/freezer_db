@@ -44,7 +44,7 @@
                    <a class="item" href="landing">Home</a>
                </li>
                 <li>
-                    <a class="item" href="Freezer"><i class="far fa-snowflake"></i> Freezer</a>
+                    <a class="item" href="Freezer.php?freezer=1"><i class="far fa-snowflake"></i> Freezer</a>
                 </li>
                 <li>
                     <a class="item" href="contents" style= "background-color: #26292f;"><i class="far fa-list-alt"></i> Contents</a>
@@ -102,7 +102,7 @@
 
                             switch($order){
                             case "id":
-                                $query .= " ORDER BY item_id DESC";
+                                $query .= " ORDER BY item_id";
                                 break;
                             case "Name":
                                 $query .= " ORDER BY name";

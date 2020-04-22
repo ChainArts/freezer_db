@@ -5,7 +5,15 @@
     if((!isset($_SESSION["id"])) || ($_SESSION["id"] != session_id()))
     {
         header('location: login');
-    }        
+    }
+
+    $location = "";
+    $brand = "Please select a freezer!";
+    $model = "";
+    $cap = "";
+    $status = "";                         
+    $fill = "";
+    $warn = "";
  ?>
 <!DOCTYPE HTML>
 <html>
@@ -78,31 +86,72 @@
                     </div>
                   </div>
                   <div class="box-right">
-                     FREEZER
+                     FREEZER DETAILS
                   </div>
                 </div>
             </header>
             <div id=content>
             <div class="table-wrapper">
-            <input id="search" class="form" type="text" onkeyup="filter()" placeholder="Search for Freezer...">
-            <select name="Freezer" class="ddown" required="pleb">
-                        <i class="fas fa-angle-down"></i>
+                <form method="get" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                <select name="freezer" class="ddown" required="pleb" onchange="this.form.submit()">
                         <option value="" class="option">Select</option>
                         <?php
-                            $query = "SELECT freezer.brand, freezer.model FROM freezer";
+                            $query = "SELECT freezer.frz_id, freezer.brand, freezer.model FROM freezer";
                             $result = $link -> query($query);
                             if($result -> num_rows == 0){
                             echo "No freezers in database, please add one first";
                             }
                             else{
                                 while($row = $result -> fetch_assoc()){
-                                    echo "<option value=".$row['model']." class = 'option'>".$row['brand'].'&nbsp'.$row['model']."</option>";
+                                    echo "<option value=".$row['frz_id']." class = 'option'>".$row['brand'].'&nbsp'.$row['model']."</option>";
+                                }
+                            }
+                        ?>
+                </select>
+                    <div class="add-right-btn" onclick="window.location='insert';">+ Add Item</div>
+                </form>
+                <?php
+                $FrzID = $_GET['freezer'];
+                $query = "SELECT * FROM freezer WHERE freezer.frz_id = '$FrzID'";
+                            $result = $link -> query($query);
+                            if($result -> num_rows == 0)
+                            {
+                                echo "Freezer not found!";
+                            }
+                            else
+                            {
+                                while ($row = $result -> fetch_assoc()){
+                                    $location = $row['location'];
+                                    $brand = $row['brand'];
+                                    $model = $row['model'];
+                                    $cap = $row['capacity'];
+                                    $status = $row['status'];
+                                    
+                                    $fill = $status / $cap;
+                                    $fill = $fill * 100;
+                                    
+                                    if($fill > 100)
+                                    {
+                                        $warn = "This Freezer is Overfilled!";
+                                    }
+                                    else
+                                    {
+                                        $warn = "";
+                                    }
+                                    
                                 }
                             }
                             
-                        ?>
-                    </select>
-            </div>  
+                ?>
+                <div class="details">
+                    <span class="title"><?php echo $brand;?> <?php echo $model;?></span>
+                    <div>Location: <?php echo $location?> </div>
+                    <div>Max Capacity: <?php echo $cap?></div>
+                    <div>Fillstate: <?php echo $fill?>% <?php echo $warn?></div>
+                </div>
+                
+                
+            </div>
         </div>
     </div>
     </div>
