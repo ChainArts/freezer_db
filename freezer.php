@@ -151,12 +151,12 @@
                 
                 <table id="table">
                     <tr>
-                        <th><a href="contents?sort=id">Item ID</a></th>
-                        <th><a href="contents?sort=Name">Name</a></th>
-                        <th><a href="contents?sort=time">Date</a></th>
-                        <th><a href="contents?sort=User">User</a></th>
-                        <th><a href="contents?sort=location">Freezer</a></th>
-                        <th><a href="contents?sort=category">Category</a></th>
+                        <th>Item ID</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>User</th>
+                        <th>Freezer</th>
+                        <th>Category</th>
                         <th>Delete</th>
                     </tr>
                     <?php
