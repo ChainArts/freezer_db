@@ -48,7 +48,7 @@
                 </div>
             </header>
             <div id=content>
-            <div class="form-wrapper">
+            <div class="form-wrapper" style="margin: 20vh 486px 20vh 486px;">
             <form method="POST" action="/insert_freezer.php" class="login">
                 
                 <div class="input">

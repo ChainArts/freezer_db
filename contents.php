@@ -58,10 +58,7 @@
                         <p style="font-weight: 200;"><?php echo $_SESSION["USR_VNAME"] . " " .    $_SESSION["USR_SNAME"];?></p>
                     </span>
                 </li>
-                    <a class="item" href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                <li>
-                     <a class="item">About</a>
-                </li>
+              <a class="item" href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
           </ul>
         </nav> 
         <div id="content-wrapper">
@@ -84,6 +81,7 @@
             </header>
             <div id=content>
             <input id="search" class="form" type="text" onkeyup="filter()" placeholder="Search for Contents...">
+                  <div class="add-right-btn" onclick="window.location='insert';" style="float: none; margin-top: 0;">+ Add Item</div>
                 <div class="table-wrapper">
                 <table id="table">
                     <tr>
