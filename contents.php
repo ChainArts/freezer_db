@@ -12,6 +12,7 @@
 
 <head>
     <title> Freezer Management | Contents </title>
+    <link rel="icon" href="media/snowflake-solid.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -41,7 +42,7 @@
           </div>
           <ul class="menu-main">
                <li>
-                   <a class="item" href="landing">Home</a>
+                   <a class="item" href="<?php echo $_SESSION['LOC']?>">Home</a>
                </li>
                 <li>
                     <a class="item" href="Freezer.php?freezer=1"><i class="far fa-snowflake"></i> Freezer</a>

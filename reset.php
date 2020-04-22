@@ -8,6 +8,7 @@ include "config.php";
 
 <head>
     <title> Freezer Management | Reset </title>
+    <link rel="icon" href="media/snowflake-solid.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 

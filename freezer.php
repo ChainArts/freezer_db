@@ -22,6 +22,7 @@
     <title> Freezer Management | Freezer </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="media/snowflake-solid.png">
 
     <!--Stylesheets-->
     <link rel="stylesheet" type="text/css" href="style/style.css" />
@@ -49,7 +50,7 @@
           </div>
           <ul class="menu-main">
                <li>
-                   <a class="item" href="landing">Home</a>
+                   <a class="item" href="<?php echo $_SESSION['LOC']?>">Home</a>
                </li>
                 <li>
                     <a class="item" href="Freezer" style= "background-color: #26292f;"><i class="far fa-snowflake"></i> Freezer</a>

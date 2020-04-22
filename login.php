@@ -10,6 +10,7 @@ include "config.php";
 
 <head>
     <title> Freezer Management | Login </title>
+    <link rel="icon" href="media/snowflake-solid.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -61,18 +62,31 @@ include "config.php";
                     $_SESSION["USR_PASS"] = $user['password'];
                     $_SESSION["USR_VNAME"] = $user['firstname'];
                     $_SESSION["USR_SNAME"] = $user['lastname'];
+                    $_SESSION["USR_LVL"] = $user['usr_lvl'];
                     $_SESSION["id"] = session_id();
         
-                    header('location: landing');
-                    $_SESSION["LOC"] = "landing";
-                }
-                else{
-                    $nameErr = "Incorrect username or password";
+                     if($user['usr_lvl']==1){
+                        header('location: landing_admin');
+                        $_SESSION["LOC"] = "landing_admin";
+                    }
+                    else if($user['user_level']==0){
+                        header('location: landing');
+                        $_SESSION["LOC"] = "landing";
+                    }
+                    else
+                    {
+                        echo("An error occurred, please contact an admin!");
+                        die;
                     }
                 }
-            }   
-            mysqli_free_result($result);
-        }
+                else
+                {
+                    $nameErr = "Incorrect username or password";
+                }
+            }
+        }   
+        mysqli_free_result($result);
+      }
     }
     ?>
     <div id="container">

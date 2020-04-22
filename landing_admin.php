@@ -5,14 +5,18 @@
     if((!isset($_SESSION["id"])) || ($_SESSION["id"] != session_id()))
     {
         header('location: login');
-    }        
-
+    }
+    
+    if($_SESSION["USR_LVL"] == '0'){
+            header('Location: landing');
+    }
+    
 ?>
 <!DOCTYPE HTML>
 <html>
 
 <head>
-    <title> Freezer Management | Dashboard </title>
+    <title> Freezer Management | Admin Dashboard </title>
     <link rel="icon" href="media/snowflake-solid.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,6 +57,9 @@
                 </li>
                 <li>
                     <a class="item" href="insert"><i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Add Item</a>
+                </li>
+                <li>
+                    <a class="item" href="users"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;Users</a>
                 </li>
                 <li>    
                     <span class="item" style="cursor: auto;">
@@ -95,6 +102,13 @@
                                 echo "<div class='box-".$count." gridbox'><div class='tilecontent'><div class=tileDetails><div class='Top'>".$row['brand']. "<br>" .$row['model']."</div><div class='Bottom' onclick=\"window.location='freezer.php?freezer=".$row['frz_id']."';\">Details</div></div></div></div>";
                             }
                         }
+                        $count = $count + '1';
+                        echo 
+                        "<div class=\"box-".$count." gridbox\" onclick=\"window.location='addfreezer';\" style=\"cursor: pointer;\">
+                            <div class='tilecontent'>
+                                <div class=tileAdd><i class=\"fas fa-plus-square\"></i></div>
+                            </div>
+                         </div>";
                     ?>
                 </div>    
             </section>

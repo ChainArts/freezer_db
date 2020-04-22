@@ -350,7 +350,7 @@ ul {
 }
 
 .tiles .gridbox{
-    background-image: url("https://picsum.photos/1280/720/?random");
+    background-image: url("/media/samsung-smart-fridge.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
@@ -482,13 +482,30 @@ ul {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: #40444b url(angle-down-solid.svg) 96% / 4% no-repeat;/
-    filter: brightness(1000);
+    background: #40444b url(angle-down-solid.svg) 96% / 4% no-repeat;
     
 }
 
 .ddown:focus {
     box-shadow: 0px 0px 5px #e6ffff;
+}
+
+.ddown-small{
+    min-width: 50px !important;
+      align-content: center;
+    padding: 15px;
+    min-height: 50px;
+    margin: 2px 10px 2px 10px;
+    transition: all .25s;
+    color:#b9bbbe;
+	cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #40444b url(angle-down-solid.svg) 85% / 15% no-repeat !important;
+}
+.ddown-small:focus {
+    box-shadow: 0px 0px 5px #e6ffff;    
 }
 
 .option{

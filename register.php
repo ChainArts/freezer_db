@@ -3,6 +3,7 @@
 
 <head>
     <title> Freezer Management | Register </title>
+    <link rel="icon" href="media/snowflake-solid.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
