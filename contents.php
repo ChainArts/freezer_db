@@ -80,11 +80,11 @@
                 </div>
             </header>
             <div id=content>
-            <input id="search" class="form" type="text" onkeyup="filter()" placeholder="Search for Contents...">
+            <input type="text" id="search" placeholder="Search for Contents..." class="form" onkeyup="filter()">
                   <div class="add-right-btn" onclick="window.location='insert';" style="float: none; margin-top: 0;">+ Add Item</div>
                 <div class="table-wrapper">
                 <table id="table">
-                    <tr>
+                    <thead>
                         <th><a href="contents?sort=id">Item ID</a></th>
                         <th><a href="contents?sort=Name">Name</a></th>
                         <th><a href="contents?sort=time">Date</a></th>
@@ -92,7 +92,8 @@
                         <th><a href="contents?sort=location">Freezer</a></th>
                         <th><a href="contents?sort=category">Category</a></th>
                         <th>Delete</th>
-                    </tr>
+                    </thead>
+                    <tbody>
                     <?php
                         $query = "SELECT contents.item_id, contents.name, contents.date, contents.location, contents.user, contents.type
                         FROM contents INNER JOIN userdata ON contents.user=userdata.username";
@@ -146,6 +147,7 @@
                         }
                         }
                     ?>
+                    </tbody>
                 </table>
             </div>  
         </div>
