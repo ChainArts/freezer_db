@@ -24,6 +24,15 @@
     box-sizing: inherit;
 }
 
+input[type=number] { 
+  -moz-appearance: textfield;
+  appearance: textfield; 
+}
+
+textarea {
+  resize: none;
+}
+
 html {
     min-height: 100%;
     max-width: 100%;

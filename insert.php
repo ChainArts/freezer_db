@@ -59,9 +59,6 @@
                     </span>
                 </li>
                     <a class="item" href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                <li>
-                     <a class="item">About</a>
-                </li>
           </ul>
         </nav> 
         <div id="content-wrapper">
@@ -83,8 +80,8 @@
                 </div>
             </header>
             <div id="content">
-            <div class="form-wrapper">
-            <form action="/additem.php" method="POST" class="login">
+            <div class="form-wrapper" style="margin: 12vh 486px 12vh 486px;">
+            <form action="/additem.php" method="POST" class="login" id="item">
                 
                 <div class="input">
                     <span>Name<span class="error"></span></span>
@@ -94,6 +91,11 @@
                     <span>Type<span class="error"></span></span>
                     <input required type="text" name="type" class="form" autocomplete="off">
                 </div>
+                
+                <div class="input">
+                    <span>Notes<span class="error"></span></span>
+                    <textarea name="notes" class="form" form="item" placeholder="Any important notes here..." autocomplete="off" rows="10" cols ="128" maxlength="1000" value="" required></textarea>
+                 </div>
                 
                 <div class="input">
                 <select name="location" class="ddown" required>

@@ -67,9 +67,6 @@
                     </span>
                 </li>
                     <a class="item" href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                <li>
-                     <a class="item">About</a>
-                </li>
           </ul>
         </nav> 
         <div id="content-wrapper">
@@ -151,7 +148,47 @@
                     <div class="properties">Fillstate: <?php echo $fill?>% <?php echo $warn?></div>
                 </div>
                 
-                
+                <table id="table">
+                    <tr>
+                        <th><a href="contents?sort=id">Item ID</a></th>
+                        <th><a href="contents?sort=Name">Name</a></th>
+                        <th><a href="contents?sort=time">Date</a></th>
+                        <th><a href="contents?sort=User">User</a></th>
+                        <th><a href="contents?sort=location">Freezer</a></th>
+                        <th><a href="contents?sort=category">Category</a></th>
+                        <th>Delete</th>
+                    </tr>
+                    <?php
+                        $locations = $brand.' '.$model;
+                        
+                        $query = "SELECT contents.item_id, contents.name, contents.date, contents.location, contents.user, contents.type
+                        FROM contents INNER JOIN userdata ON contents.user=userdata.username WHERE contents.location = '$FrzID'";
+        
+                        $result = $link-> query($query);
+                        if($result->num_rows == 0){
+                            echo "<tr><td colspan = '7'>Freezer is empty</td></tr>";
+                        }
+                        else{
+                            while($row = $result -> fetch_assoc()){
+                          $query2 = "SELECT * FROM freezer WHERE freezer.frz_id = '$row[location]'";
+                                $result2 = $link -> query($query2);
+                                if($result2 -> num_rows == 0)
+                                {
+                                    echo "Freezer not found!";
+                                }
+                                else
+                                {
+                                while ($row2 = $result2 -> fetch_assoc()){
+                                    $brand = $row2['brand'];
+                                    $model = $row2['model'];
+                                }
+                                
+                                echo "<tr class=\"tablebtn\" data-href=\"content_details.php?id=".$row['item_id']."\"><td>".$row['item_id']."</td><td>". $row['name'] ."</td><td>".$row['date']."</td><td>". $row['user'] ."</td><td>".$brand.' '.$model."</td><td>". $row['type'] ."</td><td><a href=\"rmitem.php?id=".$row['item_id']."\"><i class=\"fas fa-trash-alt\"></i></a></td></tr>";
+                            }
+                        }
+                        }
+                    ?>
+                </table>
             </div>
         </div>
     </div>

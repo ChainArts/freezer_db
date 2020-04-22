@@ -57,10 +57,23 @@
                     $itemid = $row['item_id'];
                     $name = $row['name'];
                     $date = $row['date'];
-                    $location = $row['location'];
                     $user = $row['user'];
                     $type = $row['type'];
                     $notes = $row['notes'];
+                    
+                    $query2 = "SELECT * FROM freezer WHERE freezer.frz_id = '$row[location]'";
+                                $result2 = $link -> query($query2);
+                                if($result2 -> num_rows == 0)
+                                {
+                                    echo "Freezer not found!";
+                                }
+                                else
+                                {
+                                while ($row2 = $result2 -> fetch_assoc()){
+                                    $brand = $row2['brand'];
+                                    $model = $row2['model'];
+                                }
+                                }
                 }
                 ?>
                 
@@ -69,7 +82,7 @@
 ">#<?php echo $itemid;?> <?php echo $name;?></span>
                     <div class="properties">Frozen: <?php echo $date?> </div>
                     <div class="properties">Frozen by: <?php echo $user?></div>
-                    <div class="properties">Freezer: <?php echo $location?></div>
+                    <div class="properties">Freezer: <?php echo $brand.' '.$model?></div>
                     <div class="properties">Type: <?php echo $type?></div>
                     <div class="properties">Notes: <?php echo $notes?></div>
                 </div>

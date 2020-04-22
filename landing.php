@@ -60,9 +60,6 @@
                     </span>
                 </li>
                     <a class="item" href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                <li>
-                     <a class="item" href="about">About</a>
-                </li>
           </ul>
         </nav>
         <div id="content-wrapper">

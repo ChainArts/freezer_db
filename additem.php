@@ -6,27 +6,20 @@ $User = $_SESSION["USR_Name"];
 $date = date('Y-m-d H:i:s');
 $Name = $_POST['Name'];
 $type = $_POST['type'];
-$notes = "";
+$notes = $_POST['notes'];
 $FRZ_ID = $_POST['location'];
 
-$brand="";
-$model="";
+$location = $_POST['location'];
 
 
-$query = "SELECT freezer.brand, freezer.model FROM freezer WHERE freezer.frz_id = '$FRZ_ID'";
-                            $result = $link -> query($query);
-                            if($result -> num_rows == 0){
-                            echo "No freezers in database, please add one first";
-                            }
-                            else{
-                                while($row = $result -> fetch_assoc()){
-                                    $brand = $row['brand'];
-                                    $model = $row['model'];
-                                }
-                                $query = "UPDATE freezer SET status = status + 1 WHERE frz_id = '$FRZ_ID'";
-                            }
-                            
-$location = $brand.' '. $model;
+ $query = "UPDATE freezer SET freezer.status = freezer.status + 1 WHERE freezer.frz_id = '$FRZ_ID'";
+        if(mysqli_query($link, $query)){
+                echo "Status Updated";
+                }
+                else{
+                echo "Status not Updated";
+                                    
+                    }
  try 
     {   
         mysqli_query($link, "INSERT INTO contents

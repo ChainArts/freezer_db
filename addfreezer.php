@@ -66,7 +66,7 @@
                 <div class="input">
                    <select name="Location" class="ddown" required="pleb">
                         <i class="fas fa-angle-down"></i>
-                        <option value="">Select</option>
+                        <option value="">Select Location</option>
                         <option value="Kitchen 1">Kitchen 1</option>
                         <option value="Kitchen 2">Kitchen 2</option>
                         <option value="Cellar">Cellar</option>

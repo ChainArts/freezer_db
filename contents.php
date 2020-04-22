@@ -129,8 +129,23 @@
                         }
                         else{
                             while($row = $result -> fetch_assoc()){
-                                echo "<tr class=\"tablebtn\" data-href=\"content_details.php?id=".$row['item_id']."\"><td>".$row['item_id']."</td><td>". $row['name'] ."</td><td>".$row['date']."</td><td>". $row['user'] ."</td><td>". $row['location'] ."</td><td>". $row['type'] ."</td><td><a href=\"rmitem.php?id=".$row['item_id']."\"><i class=\"fas fa-trash-alt\"></i></a></td></tr>";
+                                
+                                $query2 = "SELECT * FROM freezer WHERE freezer.frz_id = '$row[location]'";
+                                $result2 = $link -> query($query2);
+                                if($result2 -> num_rows == 0)
+                                {
+                                    echo "Freezer not found!";
+                                }
+                                else
+                                {
+                                while ($row2 = $result2 -> fetch_assoc()){
+                                    $brand = $row2['brand'];
+                                    $model = $row2['model'];
+                                }
+                                
+                                echo "<tr class=\"tablebtn\" data-href=\"content_details.php?id=".$row['item_id']."\"><td>".$row['item_id']."</td><td>". $row['name'] ."</td><td>".$row['date']."</td><td>". $row['user'] ."</td><td>".$brand.' '.$model."</td><td>". $row['type'] ."</td><td><a href=\"rmitem.php?id=".$row['item_id']."\"><i class=\"fas fa-trash-alt\"></i></a></td></tr>";
                             }
+                        }
                         }
                     ?>
                 </table>
