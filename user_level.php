@@ -17,7 +17,6 @@
             if($newlevel[$i] != $oldlevel){
                 $query = "UPDATE userdata SET usr_lvl='$newlevel[$i]' WHERE usr_id='$userid'";
                 if(mysqli_query($link, $query)){
-                    header('location: users');
                 } else {
                     echo("Failed.");
                 }
@@ -26,3 +25,5 @@
         }
 }
 ?>
+
+<meta http-equiv="refresh" content="0;URL=users">
