@@ -35,4 +35,4 @@ $Location = $_POST['Location'];
 
 ?>
 
-<meta http-equiv="refresh" content="1;URL=landing">
+<meta http-equiv="refresh" content="0.2;URL=<?php echo $_SESSION['LOC'] ?>">
