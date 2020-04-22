@@ -93,6 +93,7 @@
                         <th><a href="contents?sort=User">User</a></th>
                         <th><a href="contents?sort=location">Freezer</a></th>
                         <th><a href="contents?sort=category">Category</a></th>
+                        <th>Delete</th>
                     </tr>
                     <?php
                         $query = "SELECT contents.item_id, contents.name, contents.date, contents.location, contents.user, contents.type
@@ -128,7 +129,7 @@
                         }
                         else{
                             while($row = $result -> fetch_assoc()){
-                                echo "<tr class=\"tablebtn\" data-href=\"content_details.php?id=".$row['item_id']."\"><td>".$row['item_id']."</td><td>". $row['name'] ."</td><td>".$row['date']."</td><td>". $row['user'] ."</td><td>". $row['location'] ."</td><td>". $row['type'] ."</td>";
+                                echo "<tr class=\"tablebtn\" data-href=\"content_details.php?id=".$row['item_id']."\"><td>".$row['item_id']."</td><td>". $row['name'] ."</td><td>".$row['date']."</td><td>". $row['user'] ."</td><td>". $row['location'] ."</td><td>". $row['type'] ."</td><td><a href=\"rmitem.php?id=".$row['item_id']."\"><i class=\"fas fa-trash-alt\"></i></a></td></tr>";
                             }
                         }
                     ?>

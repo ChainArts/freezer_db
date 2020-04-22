@@ -35,7 +35,7 @@
             <header id="header">
                 <div class="header-main">
                    <div class="box-left">
-                    <div class="btn_menu" onclick="window.location='landing';">
+                    <div class="btn_menu" onclick="window.location='contents';">
                         <span><i class="fas fa-chevron-left"></i> Back</span>
                     </div>
                   </div>
@@ -47,13 +47,35 @@
             <div id=content>
                 <?php
                 
-                $id=$_GET['item_id'];
+                $id=$_GET['id'];
                 
+                $query = "SELECT contents.item_id, contents.name, contents.date, contents.location, contents.user, contents.type, contents.notes
+                        FROM contents INNER JOIN userdata ON contents.user=userdata.username WHERE '$id' = contents.item_id";
+                
+                $result = $link-> query($query);
+                while ($row = $result-> fetch_assoc()){
+                    $itemid = $row['item_id'];
+                    $name = $row['name'];
+                    $date = $row['date'];
+                    $location = $row['location'];
+                    $user = $row['user'];
+                    $type = $row['type'];
+                    $notes = $row['notes'];
+                }
                 ?>
+                
+                <div class="details">
+                    <span class="title" style="border-bottom: 1px solid #535353; margin-top: 50px; padding: 25px 0px 25px 0px;
+">#<?php echo $itemid;?> <?php echo $name;?></span>
+                    <div class="properties">Frozen: <?php echo $date?> </div>
+                    <div class="properties">Frozen by: <?php echo $user?></div>
+                    <div class="properties">Freezer: <?php echo $location?></div>
+                    <div class="properties">Type: <?php echo $type?></div>
+                    <div class="properties">Notes: <?php echo $notes?></div>
+                </div>
                 
             </div>
         </div>
-    </div>
     </div>
     </div>
 </body>

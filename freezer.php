@@ -144,10 +144,11 @@
                             
                 ?>
                 <div class="details">
-                    <span class="title"><?php echo $brand;?> <?php echo $model;?></span>
-                    <div>Location: <?php echo $location?> </div>
-                    <div>Max Capacity: <?php echo $cap?></div>
-                    <div>Fillstate: <?php echo $fill?>% <?php echo $warn?></div>
+                    <span class="title" style="border-bottom: 1px solid #535353; padding: 25px 0px 25px 0px;
+"><?php echo $brand;?> <?php echo $model;?></span>
+                    <div class="properties">Location: <?php echo $location?> </div>
+                    <div class="properties">Max Capacity: <?php echo $cap?></div>
+                    <div class="properties">Fillstate: <?php echo $fill?>% <?php echo $warn?></div>
                 </div>
                 
                 

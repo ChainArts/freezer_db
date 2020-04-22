@@ -12,6 +12,7 @@ $FRZ_ID = $_POST['location'];
 $brand="";
 $model="";
 
+
 $query = "SELECT freezer.brand, freezer.model FROM freezer WHERE freezer.frz_id = '$FRZ_ID'";
                             $result = $link -> query($query);
                             if($result -> num_rows == 0){
@@ -22,9 +23,8 @@ $query = "SELECT freezer.brand, freezer.model FROM freezer WHERE freezer.frz_id 
                                     $brand = $row['brand'];
                                     $model = $row['model'];
                                 }
+                                $query = "UPDATE freezer SET status = status + 1 WHERE frz_id = '$FRZ_ID'";
                             }
-
-$query = "UPDATE freezer SET status=status+1 WHERE frz_id = '$FRZ_ID'";
                             
 $location = $brand.' '. $model;
  try 
