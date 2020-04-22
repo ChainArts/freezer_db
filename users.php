@@ -53,8 +53,8 @@
                 <table id=table style="margin: 50px 356px 50px 356px;">
                     <tr>
                         <th>ID</th>
-                        <th>Last Name</th>
                         <th>First Name</th>
+                        <th>Last Name</th>
                         <th>Username</th>
                         <th>User Level</th>
                         <th>Delete User</th>
@@ -80,7 +80,7 @@
                                     $other = 1;
                                 }
                                 echo "<tr><td>". $row['Usr_ID'] ."</td><td>". $row['firstname'] ."</td><td>". $row['lastname']. "</td><td>".$row['username']."</td><form method='post' action='". $_SERVER['PHP_SELF']. "'><td><select onchange=\"this.form.submit()\" name='level[]' class= \"ddown-small\"><option class=\"option\" value=\"".$row['usr_lvl']." \">".$level."&nbsp&nbsp&nbsp&nbsp&nbsp</option>
-                                <option class=\"option\" value=\"".$other."  \">".$show." </option></select></td><td><a href=\"user_del.php?id=".$row['Usr_ID']."\"><i class=\"fas fa-trash-alt\"></i></a></td></tr>";
+                                <option class=\"option\" value=\"".$other."  \">".$show." </option></select></td><td><a href=\"user_del?id=".$row['Usr_ID']."\"><i class=\"fas fa-trash-alt\"></i></a></td></tr>";
                             }
                             echo "</form>";
                         }
