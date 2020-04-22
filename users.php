@@ -79,22 +79,13 @@
                                     $show = "Admin";
                                     $other = 1;
                                 }
-                                echo "<tr><td>". $row['Usr_ID'] ."</td><td>". $row['firstname'] ."</td><td>". $row['lastname']. "</td><td>".$row['username']."</td><form method='post' action='". $_SERVER['PHP_SELF']. "'><td><select name='level[]' class= \"ddown-small\"><option class=\"option\" value=\"".$row['usr_lvl']." \">".$level."&nbsp&nbsp&nbsp&nbsp&nbsp</option>
+                                echo "<tr><td>". $row['Usr_ID'] ."</td><td>". $row['firstname'] ."</td><td>". $row['lastname']. "</td><td>".$row['username']."</td><form method='post' action='". $_SERVER['PHP_SELF']. "'><td><select onchange=\"this.form.submit()\" name='level[]' class= \"ddown-small\"><option class=\"option\" value=\"".$row['usr_lvl']." \">".$level."&nbsp&nbsp&nbsp&nbsp&nbsp</option>
                                 <option class=\"option\" value=\"".$other."  \">".$show." </option></select></td><td><a href=\"user_del.php?id=".$row['Usr_ID']."\"><i class=\"fas fa-trash-alt\"></i></a></td></tr>";
                             }
+                            echo "</form>";
                         }
-                        if(isset($_POST['levelchange'])){
+                        if(isset($_POST['level'])){
                             include "user_level.php";
-                        }
-                        elseif(isset($_POST['deluser'])){
-                            $userid=$row['UserID'];
-                            echo($userid);
-                            $query="DELETE FROM users WHERE Usr_ID='$userid'";
-                            if(mysqli_query($link, $query)){
-                                echo("Worked.");
-                            } else {
-                                echo("Failed.");
-                            }
                         }
                          ?>
                 </table>

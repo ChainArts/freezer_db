@@ -491,8 +491,8 @@ ul {
 }
 
 .ddown-small{
-    min-width: 50px !important;
-      align-content: center;
+    min-width: 100px !important;
+    align-content: center;
     padding: 15px;
     min-height: 50px;
     margin: 2px 10px 2px 10px;

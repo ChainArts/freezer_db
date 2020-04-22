@@ -1,6 +1,6 @@
 <?php
 /* Database credentials.*/
-define('DB_SERVER', '192.168.122.56');
+define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'freezer_db');
