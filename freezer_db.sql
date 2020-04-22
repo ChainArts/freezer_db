@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `freezer_db` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `freezer_db`;
 -- MariaDB dump 10.17  Distrib 10.4.6-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: freezer_db
