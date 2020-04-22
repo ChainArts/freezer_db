@@ -48,4 +48,4 @@ $location = $_POST['location'];
 
 ?>
 
-<meta http-equiv="refresh" content="1;URL=contents?sort=Date"/>
+<meta http-equiv="refresh" content="0.5;URL=contents?sort=Date"/>

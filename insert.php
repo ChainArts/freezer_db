@@ -95,7 +95,7 @@
                 
                 <div class="input">
                     <span>Notes<span class="error"></span></span>
-                    <textarea name="notes" class="form" form="item" placeholder="Any important notes here..." autocomplete="off" rows="10" cols ="128" maxlength="1000" value="" required></textarea>
+                    <textarea name="notes" class="form" form="item" placeholder="Any important notes here..." autocomplete="off" rows="10" cols ="128" maxlength="1000" value=""></textarea>
                  </div>
                 
                 <div class="input">
